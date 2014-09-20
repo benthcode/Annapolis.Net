@@ -1,0 +1,38 @@
+﻿<div id="divUserAuthentication-j" tabindex="-1" role="dialog" aria-hidden="true" class="modal hide fade">
+    <div class="modal-header">
+        <h3 id="myModalLabel">@LocaleResources["Membership.Authentication"]</h3>
+    </div>
+    <div class="modal-body" style="max-height: 100%;">
+       <div class="userAuthenticationBinder-j" >
+         <div data-bind="with: signInUser" class="pull-right">
+            <div>@LocaleResources["Membership.UserName"]</div>
+            <div><input data-bind="value: identifier, valueUpdate: 'afterkeydown'" /></div>
+            <div><p data-bind="validationMessage: identifier"></p></div>
+            <div>@LocaleResources["Membership.Password"]</div>
+            <div><input type="password" data-bind="value: password, valueUpdate: 'afterkeydown'" /></div>
+            <div><p data-bind="validationMessage: password"></p></div>
+            <div>@LocaleResources["Membership.IsCookiePersistent"]</div>
+            <div><input type="checkbox" data-bind="checked: isCookiePersistent" /></div>
+            <div><input type="button"  data-bind="enable: isOperationValid, click: signIn" value="@LocaleResources["Membership.SignIn"]" class="btn btn-primary" /></div>
+         </div>
+         <div data-bind="with: registerUser">
+            <div>@LocaleResources["Membership.UserName"]</div>
+            <div><input data-bind="value: userName, valueUpdate: 'afterkeydown'" /></div>
+            <p data-bind="validationMessage: userName"></p>
+            <div>@LocaleResources["Membership.Password"]</div>
+            <div><input type="password" data-bind="value: password, valueUpdate: 'afterkeydown'" /></div>
+            <p data-bind="validationMessage: password"></p>
+            <div>@LocaleResources["Membership.PasswordConfirm"]</div>
+            <div><input type="password" data-bind="value: confirmPassword, valueUpdate: 'afterkeydown'" /></div>
+             <p data-bind="validationMessage: confirmPassword"></p>
+            <div>@LocaleResources["Membership.RegisterEmail"]</div>
+            <div><input data-bind="value: registerEmail, valueUpdate: 'afterkeydown'" /></div>
+            <div><p data-bind="validationMessage: registerEmail"></p></div>
+            <div><input type="button" data-bind="enable: isOperationValid, click: register"  value="@LocaleResources["Membership.Register"]" class="btn btn-primary" /></div>
+         </div>
+       </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">@LocaleResources["Membership.Close"]</button>
+    </div>
+</div>

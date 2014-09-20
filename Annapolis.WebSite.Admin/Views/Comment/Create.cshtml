@@ -1,0 +1,140 @@
+﻿@model Annapolis.WebSite.Admin.Models.ContentComment
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ContentComment</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Content)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Content)
+            @Html.ValidationMessageFor(model => model.Content)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OriginalContent)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OriginalContent)
+            @Html.ValidationMessageFor(model => model.OriginalContent)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsSpam)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsSpam)
+            @Html.ValidationMessageFor(model => model.IsSpam)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsLocked)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsLocked)
+            @Html.ValidationMessageFor(model => model.IsLocked)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsSolution)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsSolution)
+            @Html.ValidationMessageFor(model => model.IsSolution)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsAttachedToTopic)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsAttachedToTopic)
+            @Html.ValidationMessageFor(model => model.IsAttachedToTopic)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreateTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreateTime)
+            @Html.ValidationMessageFor(model => model.CreateTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastUpdateTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastUpdateTime)
+            @Html.ValidationMessageFor(model => model.LastUpdateTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TopicId, "ContentTopic")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TopicId", String.Empty)
+            @Html.ValidationMessageFor(model => model.TopicId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VoteUpCount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VoteUpCount)
+            @Html.ValidationMessageFor(model => model.VoteUpCount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VoteDownCount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.VoteDownCount)
+            @Html.ValidationMessageFor(model => model.VoteDownCount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserId, "MemberUser")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserId", String.Empty)
+            @Html.ValidationMessageFor(model => model.UserId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Key)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Key)
+            @Html.ValidationMessageFor(model => model.Key)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsHidden)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsHidden)
+            @Html.ValidationMessageFor(model => model.IsHidden)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

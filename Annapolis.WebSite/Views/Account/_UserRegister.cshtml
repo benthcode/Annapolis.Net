@@ -1,0 +1,25 @@
+﻿@model UserRegisterViewModel
+
+
+
+@using (Html.BeginForm("UserRegister", "Account"))
+{
+    if (ViewBag.ErrorMessage != null)
+    {
+        <div>@ViewBag.ErrorMessage</div> 
+    }
+    <div>@LocaleResources["Membership.UserName"]</div>
+    <div>@Html.TextBoxFor(m => m.UserName)</div>
+    <div>@Html.ValidationMessageFor(x => x.UserName)</div>
+    <div>@LocaleResources["Membership.Password"]</div>
+    <div>@Html.PasswordFor(m => m.Password)</div>
+    <div>@Html.ValidationMessageFor(x => x.Password)</div>
+    <div>@LocaleResources["Membership.PasswordConfirm"]</div>
+    <div>@Html.PasswordFor(m => m.ConfirmPassword)</div>
+    <div>@Html.ValidationMessageFor(x => x.ConfirmPassword)</div>
+    <div>@LocaleResources["Membership.RegisterEmail"]</div>
+    <div>@Html.TextBoxFor(m => m.RegisterEmail)</div>
+    <div>@Html.ValidationMessageFor(x => x.RegisterEmail)</div>
+    <div><p data-bind="validationMessage: registerEmail"></p></div>
+    <input type="submit" value="@LocaleResources["Membership.Register"]" class="btn btn-primary" />
+}

@@ -1,0 +1,149 @@
+﻿@model TopicCommentsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ContentTopic</legend>
+
+    <div class="panel panel-default">
+      <div class="panel-heading"> @Html.DisplayNameFor(model => model.Topic.Title)</div>
+      <div class="panel-body">
+        @Html.DisplayFor(model => model.Topic.Title)
+      </div>
+    </div>
+
+     <div class="panel panel-default">
+      <div class="panel-heading">  @Html.DisplayNameFor(model => model.Topic.OriginalTitle)</div>
+      <div class="panel-body">
+         @Html.DisplayFor(model => model.Topic.OriginalTitle)
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">  @Html.DisplayNameFor(model => model.Topic.SubTitle)</div>
+      <div class="panel-body">
+         @Html.DisplayFor(model => model.Topic.SubTitle)
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">  @Html.DisplayNameFor(model => model.Topic.OriginalSubTitle)</div>
+      <div class="panel-body">
+         @Html.DisplayFor(model => model.Topic.OriginalSubTitle)
+      </div>
+    </div>
+
+     <div class="panel panel-default">
+      <div class="panel-heading">  @Html.DisplayNameFor(model => model.Post.Content)</div>
+      <div class="panel-body">
+         @Html.Raw(Model.Post.Content)
+      </div>
+    </div>
+
+     <div class="panel panel-default">
+      <div class="panel-heading">  @Html.DisplayNameFor(model => model.Post.OriginalContent)</div>
+      <div class="panel-body">
+         @Html.Raw(Model.Post.OriginalContent)
+      </div>
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Topic.TitleUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Topic.TitleUrl)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Topic.Thumbnail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Topic.Thumbnail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Topic.IsSticky)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Topic.IsSticky)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Topic.IsLocked)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Topic.IsLocked)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Topic.IsHidden)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Topic.IsHidden)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Topic.CreateTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Topic.CreateTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Topic.LastUpdateTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Topic.LastUpdateTime)
+    </div>
+
+    <div class="display-label">
+        Thread Name
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Topic.ContentThread.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Topic.MemberUser.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Topic.MemberUser.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Topic.Key)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Topic.Key)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Topic.FirstCommentId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Topic.FirstCommentId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Topic.LastCommentId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Topic.LastCommentId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Topic.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<hr />
+
+<div class="panel-group">
+@foreach (var item in Model.Comments) 
+{
+    @Html.Partial("~/Views/Comment/_CommentItem.cshtml", item);
+}
+</div>

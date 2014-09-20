@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<locale>
+  <languages>
+    <language name="English" culture="en-US" languageimagefilename="" righttoleft="false"></language>
+    <language name="Simpliefied Chinese" culture="zh-CN" languageimagefilename="" righttoleft="false"></language>
+  </languages>
+  <resources>
+    
+    <section name="App">
+      
+      <section name="UI">
+        <resource key="App.Edit" note="">
+          <culture name="en-US" note="">Edit</culture>
+          <culture name="zh-CN" note="">编辑</culture>
+        </resource>
+        <resource key="App.Save" note="">
+          <culture name="en-US" note="">Save</culture>
+          <culture name="zh-CN" note="">保存</culture>
+        </resource>
+        <resource key="App.Cancel" note="">
+          <culture name="en-US" note="">Cancel</culture>
+          <culture name="zh-CN" note="">取消</culture>
+        </resource>
+        <resource key="App.Publish" note="">
+          <culture name="en-US" note="">Publish</culture>
+          <culture name="zh-CN" note="">发布</culture>
+        </resource>
+        <resource key="App.PublishedBy" note="">
+          <culture name="en-US" note="">published by</culture>
+          <culture name="zh-CN" note="">发布于</culture>
+        </resource>
+      </section>
+      
+      <section name="App.OperationStatus">
+        <resource key="App.OperationStatus.Success" note="">
+          <culture name="en-US" note="">save successfully</culture>
+          <culture name="zh-CN" note="">保存成功</culture>
+        </resource>
+        <resource key="App.OperationStatus.NoPermission" note="">
+          <culture name="en-US" note="">no  permission</culture>
+          <culture name="zh-CN" note="">没有权限</culture>
+        </resource>
+        <resource key="App.OperationStatus.GenericError" note="">
+          <culture name="en-US" note="">save failed</culture>
+          <culture name="zh-CN" note="">保存失败</culture>
+        </resource>
+        <resource key="App.OperationStatus.DataFormatError" note="">
+          <culture name="en-US" note="">data format error</culture>
+          <culture name="zh-CN" note="">数据格式错误</culture>
+        </resource>
+      </section>
+
+      <section name="Time">
+        <resource key="App.Time.Ago" onJs="true" note="">
+          <culture name="en-US" note="">ago</culture>
+          <culture name="zh-CN" note="">前</culture>
+        </resource>
+      </section>
+      
+    </section>
+
+    <section name="Layout">
+
+      <resource key="Layout.Home" note="">
+        <culture name="en-US" note="">Home</culture>
+        <culture name="zh-CN" note="">主页</culture>
+      </resource>
+
+      <resource key="Layout.MyAccount" note="">
+        <culture name="en-US" note="">My Account</culture>
+        <culture name="zh-CN" note="">我的帐号</culture>
+      </resource>
+
+      <resource key="Layout.MyTopics" note="">
+        <culture name="en-US" note="">My Topics</culture>
+        <culture name="zh-CN" note="">我的话题</culture>
+      </resource>
+
+      <resource key="Layout.MyComments" note="">
+        <culture name="en-US" note="">My Posts</culture>
+        <culture name="zh-CN" note="">我的评论</culture>
+      </resource>
+
+      <resource key="Layout.MySettings" note="">
+        <culture name="en-US" note="">My Settings</culture>
+        <culture name="zh-CN" note="">我的设置</culture>
+      </resource>
+      
+    </section>
+    
+    <section name="Membership">
+      
+      <section name="UI">
+        <resource key="Membership.Authentication" note="">
+          <culture name="en-US" note="">User Authentication</culture>
+          <culture name="zh-CN" note="">用户认证</culture>
+        </resource>
+        <resource key="Membership.SignIn" note="">
+          <culture name="en-US" note="">SignIn</culture>
+          <culture name="zh-CN" note="">登录</culture>
+        </resource>
+        <resource key="Membership.Register" note="">
+          <culture name="en-US" note="">Register</culture>
+          <culture name="zh-CN" note="">注册</culture>
+        </resource>
+        <resource key="Membership.SignOut" note="">
+          <culture name="en-US" note="">SignOut</culture>
+          <culture name="zh-CN" note="">注销</culture>
+        </resource>
+        <resource key="Membership.Close" note="">
+          <culture name="en-US" note="">Close</culture>
+          <culture name="zh-CN" note="">关闭</culture>
+        </resource>
+        <resource key="Membership.UserName" note="">
+          <culture name="en-US" note="">user name</culture>
+          <culture name="zh-CN" note="">用户名</culture>
+        </resource>
+        <resource key="Membership.Password" note="">
+          <culture name="en-US" note="">password</culture>
+          <culture name="zh-CN" note="">密码</culture>
+        </resource>
+        <resource key="Membership.PasswordConfirm" note="">
+          <culture name="en-US" note="">confirm password</culture>
+          <culture name="zh-CN" note="">确认密码</culture>
+        </resource>
+        <resource key="Membership.RegisterEmail" note="">
+          <culture name="en-US" note="">register email</culture>
+          <culture name="zh-CN" note="">联系邮箱</culture>
+        </resource>
+        <resource key="Membership.ContactEmail" note="">
+          <culture name="en-US" note="">contact email</culture>
+          <culture name="zh-CN" note="">常用邮箱</culture>
+        </resource>
+        <resource key="Membership.IsCookiePersistent" note="">
+          <culture name="en-US" note="">auto login in one month?</culture>
+          <culture name="zh-CN" note="">一个月内自动登录?</culture>
+        </resource>
+      </section>
+      
+      <section name="OperationStatus">
+        <resource key="Membership.OperationStatus.UserSignInSuccess" note="">
+          <culture name="en-US" note="">LoginOn Success</culture>
+          <culture name="zh-CN" note="">登录成功</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.UserSignOutSuccess" note="">
+          <culture name="en-US" note="">LoginOut Success</culture>
+          <culture name="zh-CN" note="">注销成功</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.UserRegisterSuccess" note="">
+          <culture name="en-US" note="">Register Success</culture>
+          <culture name="zh-CN" note="">注册成功</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.NoUserOrWrongPassword" note="">
+          <culture name="en-US" note="">user not exists or wrong password</culture>
+          <culture name="zh-CN" note="">用户不存在或者密码错误</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.NotValidUser" note="">
+          <culture name="en-US" note="">Not a valid user</culture>
+          <culture name="zh-CN" note="">无效用户</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.InvalidUserName" note="">
+          <culture name="en-US" note="">Invalid user name</culture>
+          <culture name="zh-CN" note="">用户名无效</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.InvalidEmail" note="">
+          <culture name="en-US" note="">invalid email</culture>
+          <culture name="zh-CN" note="">邮箱无效</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.InvalidPassword" note="">
+          <culture name="en-US" note="">invalid password</culture>
+          <culture name="zh-CN" note="">密码无效</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.DuplicatedUserName" note="">
+          <culture name="en-US" note="">duplicated user name</culture>
+          <culture name="zh-CN" note="">用户名已存在</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.DuplicatedRegisterEmail" note="">
+          <culture name="en-US" note="">duplicated register email</culture>
+          <culture name="zh-CN" note="">注册邮箱已存在</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.DuplicatedContactEmail" note="">
+          <culture name="en-US" note="">duplicated contact email</culture>
+          <culture name="zh-CN" note="">联系邮箱已存在</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.InvalidQuestion" note="">
+          <culture name="en-US" note="">invalid question</culture>
+          <culture name="zh-CN" note="">问题无效</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.InvalidAnswer" note="">
+          <culture name="en-US" note="">invalid answer</culture>
+          <culture name="zh-CN" note="">答案无效</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.GenericError" note="">
+          <culture name="en-US" note="">create user error</culture>
+          <culture name="zh-CN" note="">用户创建错误</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.UserRejected" note="">
+          <culture name="en-US" note="">user rejected</culture>
+          <culture name="zh-CN" note="">用户被拒绝</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.Verification" note="">
+          <culture name="en-US" note="">user created, please enter register email to confirm</culture>
+          <culture name="zh-CN" note="">用户创建成功,请到您的注册邮箱进行确认</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.PasswordUpdateSuccess" note="">
+          <culture name="en-US" note="">Password update success</culture>
+          <culture name="zh-CN" note="">密码更新成功</culture>
+        </resource>
+        <resource key="Membership.OperationStatus.PasswordUpdateFail" note="">
+          <culture name="en-US" note="">Password update fails</culture>
+          <culture name="zh-CN" note="">密码更新失败</culture>
+        </resource>
+      </section>
+      
+      <section name="ClientError">
+        <resource key="Membership.ClientError.UserNameIsEmpty"  onJs="true" note="">
+          <culture name="en-US" note="">user name is empty</culture>
+          <culture name="zh-CN" note="">用户名不能为空</culture>
+        </resource>
+        <resource key="Membership.ClientError.RegisterEmailIsEmpty"  onJs="true" note="">
+          <culture name="en-US" note="">regiser email is empty</culture>
+          <culture name="zh-CN" note="">注册邮箱不能为空</culture>
+        </resource>
+        <resource key="Membership.ClientError.UserNameIsTooShort"  onJs="true" note="">
+          <culture name="en-US" note="">user name is too short</culture>
+          <culture name="zh-CN" note="">用户名太短</culture>
+        </resource>
+        <resource key="Membership.ClientError.InvalidUserNamePattern"  onJs="true" note="">
+          <culture name="en-US" note="">user name can only contain alphabet, number, or underscore</culture>
+          <culture name="zh-CN" note="">用户名只能包含汉字，字母，数字和下划线</culture>
+        </resource>
+        <resource key="Membership.ClientError.PasswordIsEmpty" onJs="true" note="">
+          <culture name="en-US" note="">password is empty</culture>
+          <culture name="zh-CN" note="">密码不能为空</culture>
+        </resource>
+        <resource key="Membership.ClientError.PasswordIsTooShort"  onJs="true" note="">
+          <culture name="en-US" note="">password is too short</culture>
+          <culture name="zh-CN" note="">密码太短</culture>
+        </resource>
+        <resource key="Membership.ClientError.ConfirmPasswordNotMatched"  onJs="true" note="">
+          <culture name="en-US" note="">confirm Password not matched</culture>
+          <culture name="zh-CN" note="">两次密码输入不相同</culture>
+        </resource>
+        <resource key="Membership.ClientError.InvalidEmail"  onJs="true" note="">
+          <culture name="en-US" note="">invalid email</culture>
+          <culture name="zh-CN" note="">邮箱格式无效</culture>
+        </resource>
+        <resource key="Membership.ClientError.UserNameOrEmailIsEmpty"  onJs="true" note="">
+          <culture name="en-US" note="">user name or email is empty</culture>
+          <culture name="zh-CN" note="">请输入用户名或者邮箱地址</culture>
+        </resource>
+        <resource key="Membership.ClientError.UserNameOrEmailIsInvalid"  onJs="true" note="">
+          <culture name="en-US" note="">user name or email is invalid</culture>
+          <culture name="zh-CN" note="">用户名或者邮箱格式不正确</culture>
+        </resource>
+        <resource key="Membership.ClientError.NotSingIn"  onJs="true" note="">
+          <culture name="en-US" note="">You are signed in!</culture>
+          <culture name="zh-CN" note="">您还没登录</culture>
+        </resource>
+        <resource key="Membership.ClientError.SignInNotApproved"  onJs="true" note="">
+          <culture name="en-US" note="">You are signed in, but not been approved!</culture>
+          <culture name="zh-CN" note="">您还没有验证</culture>
+        </resource>
+        <resource key="Membership.ClientError.SingInButLocked"  onJs="true" note="">
+          <culture name="en-US" note="">You are signed in, but not been approved!</culture>
+          <culture name="zh-CN" note="">您已被锁定</culture>
+        </resource>
+        <resource key="Membership.ClientError.ContactAdminstrator"  onJs="true" note="">
+          <culture name="en-US" note="">Please contact administrator.</culture>
+          <culture name="zh-CN" note="">请联系管理员</culture>
+        </resource>
+      </section>
+      
+    </section>
+    
+    <section name="Content">
+      
+      <section name="Topic">
+        <resource key="Topic.TitleIsRequired"  onJs="true" note="">
+          <culture name="en-US" note="">Topic title is empty</culture>
+          <culture name="zh-CN" note="">标题不能为空</culture>
+        </resource>
+        <resource key="Topic.ContentIsRequired"  onJs="true" note="">
+          <culture name="en-US" note="">Topic content is empty</culture>
+          <culture name="zh-CN" note="">内容不能为空</culture>
+        </resource>
+        <resource key="Topic.CreateTopic" note="">
+          <culture name="en-US" note="">Create Topic</culture>
+          <culture name="zh-CN" note="">创建话题</culture>
+        </resource>
+      </section>
+      
+      <section name="Comment">
+        <resource key="Comment.ContentIsRequired"  onJs="true" note="">
+          <culture name="en-US" note="">Post content is empty</culture>
+          <culture name="zh-CN" note="">评论内容不能为空</culture>
+        </resource>
+        <resource key="Comment.Publish"  onJs="true" note="">
+          <culture name="en-US" note="">Publish Comment</culture>
+          <culture name="zh-CN" note="">发表评论</culture>
+        </resource>  
+      </section>
+
+      <section name="Thread">
+        <resource key="Thread.InvalidThread" note="">
+          <culture name="en-US" note="">Invalid thread</culture>
+          <culture name="zh-CN" note="">无效的主题</culture>
+        </resource>
+      </section>
+
+      <section name="Upload">
+        <resource key="Upload.ChooseImage" onJs="true" note="">
+          <culture name="en-US" note="">Choose Image</culture>
+          <culture name="zh-CN" note="">选择图片</culture>
+        </resource>
+        <resource key="Upload.GenericError" note="">
+          <culture name="en-US" note="">Upload Error</culture>
+          <culture name="zh-CN" note="">上传错误</culture>
+        </resource>
+        <resource key="Upload.InValidFileExtension" note="">
+          <culture name="en-US" note="">Invalid upload file extension</culture>
+          <culture name="zh-CN" note="">无效的上传文件扩展名</culture>
+        </resource>
+        <resource key="Upload.DocumentExceedLimit" note="">
+          <culture name="en-US" note="">Upload document is too big</culture>
+          <culture name="zh-CN" note="">上传文件太大</culture>
+        </resource>
+        <resource key="Upload.ImageExceedLimit" note="">
+          <culture name="en-US" note="">Upload image is too big</culture>
+          <culture name="zh-CN" note="">上传图片太大</culture>
+        </resource>
+        <resource key="Upload.NoPermissionToUploadDocument" note="">
+          <culture name="en-US" note="">No permission to upload document</culture>
+          <culture name="zh-CN" note="">您没有上传文档权限</culture>
+        </resource>
+        <resource key="Upload.NoPermissionToUploadImage" note="">
+          <culture name="en-US" note="">No permission to upload image</culture>
+          <culture name="zh-CN" note="">您没有上传图片权限</culture>
+        </resource>
+      </section>
+
+      <section name="Editor">
+        <resource key="Editor.ChooseImage"  onJs="true" note="">
+          <culture name="en-US" note="">Choose Image</culture>
+          <culture name="zh-CN" note="">选择图片</culture>
+        </resource>
+      </section>
+
+      <section name="Vote">
+        <resource key="Vote.VoteCannotForYourSelf"  onJs="true" note="">
+          <culture name="en-US" note="">You cannot vote for yourself</culture>
+          <culture name="zh-CN" note="">不能为自己投票</culture>
+        </resource>
+      <resource key="Vote.VoteHasExisted"  onJs="true" note="">
+          <culture name="en-US" note="">You have already voted</culture>
+          <culture name="zh-CN" note="">您已投票了</culture>
+        </resource>
+      </section>
+
+    </section>
+
+    <secion name="User">
+      <resource key="User.UpdatePassword" note="">
+        <culture name="en-US" note="">Update Password</culture>
+        <culture name="zh-CN" note="">更新密码</culture>
+      </resource>
+      <resource key="User.OldPassword" note="">
+        <culture name="en-US" note="">Old Password</culture>
+        <culture name="zh-CN" note="">旧密码</culture>
+      </resource>
+      <resource key="User.NewPassword" note="">
+        <culture name="en-US" note="">New Password</culture>
+        <culture name="zh-CN" note="">新密码</culture>
+      </resource>
+      <resource key="User.ConfirmNewPassword" note="">
+        <culture name="en-US" note="">Confirm New Password</culture>
+        <culture name="zh-CN" note="">确认新密码</culture>
+      </resource>
+    </secion>
+
+    <section name="Error">
+    </section>
+
+    <section name="Validation">
+        <resource key="Error.Validation.NotSame"  onJs="true" note="">
+          <culture name="en-US" note="">Value should be same as {0}</culture>
+          <culture name="zh-CN" note="">输入不匹配</culture>
+        </resource>
+      </section>
+
+  </resources>
+</locale>

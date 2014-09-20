@@ -1,0 +1,26 @@
+﻿@model UserAuthenticationViewModel
+@{
+   Layout = null;
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/bootstrap/css/bootstrap-v2.3.2.min.css" />
+<script type="text/javascript" src="~/Scripts/library/jquery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script type="text/javascript" src="~/Scripts/library/bootstrap/bootstrap-v2.3.2.min.js"></script>
+
+<div class="masthead">
+    <div class="span6 offset4">
+        <h3 class="muted"><span class="circle-around-header-text">.Net</span> Technology Discussion Highlights</h3>
+        <div class="pull-right">
+            <li><a href="/"><i>@LocaleResources["Layout.Home"]</i></a></li>
+        </div>
+    </div>
+    <div class="span12" style="margin-top:30px">
+        <div id="loginOnUserRegisterDiv" class="span3 offset4">
+            @Html.Partial("_UserRegister", Model.UserRegister)
+        </div>
+         <div id="loginOnUserSignDiv" class="span3">
+            @Html.Partial("_UserSignIn", Model.UserSignIn)
+        </div>
+    </div>
+</div>

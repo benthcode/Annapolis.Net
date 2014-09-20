@@ -1,0 +1,121 @@
+﻿.display-none-j { display:none; }
+
+
+.comment-edit-save-j {}
+.comment-edit-cancel-j {}
+.comment-view-content-j {}
+
+.resizableImg-j{
+  cursor: url("/Content/chesapeakebay/images/cursor/zoom_in.cur"), auto;
+}
+
+.resizableImg-clone-j
+{
+  cursor: url("/Content/chesapeakebay/images/cursor/zoom_out.cur"), auto;
+}
+
+ul { 
+  list-style: none; 
+}
+
+
+.row-space-35 {
+    margin-top: 35px;
+}
+
+.row-space-5 {
+    margin-top: 5px;
+}
+
+.row-space-10 {
+    margin-top: 10px;
+}
+
+.row-space-15 {
+    margin-top: 15px;
+}
+
+.row-space-20 {
+    margin-top: 15px;
+}
+
+.thumbnailimage-small {
+    height:64px;
+    width:64px;
+    margin-right:5px;
+}
+
+.thumbnailimage-middle {
+    height:80px;
+    width:80px;
+}
+
+.topic-item{
+
+}
+
+.comment-item{
+}
+
+.pageTopic{
+}
+
+    .pageTopic ul, ol
+    {
+        margin-left:0;
+    }
+
+.stickytopic{
+    margin-bottom:25px;
+    margin-left:10px;
+}
+
+.stickytopic-item{
+    width:30%;
+    margin-right:10px;
+    margin-bottom:10px;
+}
+
+
+.title-stickytopic-item{
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+.circle-around-header-text {
+    
+    margin:5px;
+    border-radius: 60px;    
+    background-color:#2f96b4;
+    color:white;
+    font-size: 1.0em;
+    padding: 2px 10px;    
+}
+
+.circle-around-content-text {
+    
+    border-radius: 60px;    
+    background-color:#2f96b4;
+    color:white;
+    font-size: 1.0em;
+    padding: 2px 10px;    
+}
+
+.progressbar-centered { 
+  width:24px; 
+  height:24px; 
+  position:fixed;
+  z-index: 10000;  
+  top:50%;  
+  left:50%;  
+  margin: 0;
+  box-shadow: none;
+  border:0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}  

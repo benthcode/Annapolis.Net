@@ -1,0 +1,25 @@
+﻿@using Annapolis.WebSite.Admin.Extensions
+@model IPagedList<Annapolis.WebSite.Admin.ViewModels.TopicViewModel>
+
+@{
+    ViewBag.Title = "UserTopics";
+}
+
+<h2>UserTopics</h2>
+
+    
+@foreach (var item in Model) 
+{
+    @Html.Partial("~/Views/Topic/_TopicItem.cshtml", item);
+}
+
+<br />
+<div id='Paging' style="text-align:left">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.AdminAction("UserTopics", new { page, Id=ViewBag.UserId}))
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.collapse').collapse();
+    });
+</script>

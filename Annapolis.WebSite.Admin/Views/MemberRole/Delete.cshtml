@@ -1,0 +1,40 @@
+﻿@model Circle.Web.Admin.MemberRole
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>MemberRole</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RoleName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RoleName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsAdmin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsAdmin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Key)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Key)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

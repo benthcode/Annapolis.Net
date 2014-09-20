@@ -1,0 +1,174 @@
+﻿@model TopicCommentsViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ContentTopic</legend>
+
+        @Html.HiddenFor(model => model.Topic.Id)
+
+        <div class="panel panel-default">
+          <div class="panel-heading"> @Html.DisplayNameFor(model => model.Topic.Title)</div>
+          <div class="panel-body">
+            @Html.EditorFor(model => model.Topic.Title)
+            @Html.ValidationMessageFor(model => model.Topic.Title)
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading"> @Html.DisplayNameFor(model => model.Topic.OriginalTitle)</div>
+          <div class="panel-body">
+            @Html.EditorFor(model => model.Topic.OriginalTitle)
+            @Html.ValidationMessageFor(model => model.Topic.OriginalTitle)
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading"> @Html.DisplayNameFor(model => model.Topic.SubTitle)</div>
+          <div class="panel-body">
+            @Html.TextAreaFor(model => model.Topic.SubTitle, new { rows="5" })
+            @Html.ValidationMessageFor(model => model.Topic.SubTitle)
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading"> @Html.DisplayNameFor(model => model.Topic.OriginalSubTitle)</div>
+          <div class="panel-body">
+            @Html.TextAreaFor(model => model.Topic.OriginalSubTitle, new { rows="5" })
+            @Html.ValidationMessageFor(model => model.Topic.OriginalSubTitle)
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading"> @Html.DisplayNameFor(model => model.Post.Content)</div>
+          <div class="panel-body">
+            @Html.TextAreaFor(model => model.Post.Content, new { rows="50" })
+            @Html.ValidationMessageFor(model => model.Post.Content)
+          </div>
+        </div>
+
+         <div class="panel panel-default">
+          <div class="panel-heading"> @Html.DisplayNameFor(model => model.Post.OriginalContent)</div>
+          <div class="panel-body">
+            @Html.TextAreaFor(model => model.Post.OriginalContent, new { rows="50" })
+            @Html.ValidationMessageFor(model => model.Post.OriginalContent)
+          </div>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Topic.TitleUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Topic.TitleUrl)
+            @Html.ValidationMessageFor(model => model.Topic.TitleUrl)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Topic.Thumbnail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Topic.Thumbnail)
+            @Html.ValidationMessageFor(model => model.Topic.Thumbnail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Topic.IsSticky)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Topic.IsSticky)
+            @Html.ValidationMessageFor(model => model.Topic.IsSticky)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Topic.IsLocked)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Topic.IsLocked)
+            @Html.ValidationMessageFor(model => model.Topic.IsLocked)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Topic.IsHidden)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Topic.IsHidden)
+            @Html.ValidationMessageFor(model => model.Topic.IsHidden)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Topic.CreateTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Topic.CreateTime)
+            @Html.ValidationMessageFor(model => model.Topic.CreateTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Topic.LastUpdateTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Topic.LastUpdateTime)
+            @Html.ValidationMessageFor(model => model.Topic.LastUpdateTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Topic.ThreadId, "ContentThread")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Topic.ThreadId", ViewBag.Threads as SelectList)
+            @Html.ValidationMessageFor(model => model.Topic.ThreadId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Topic.UserId, "MemberUser")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Topic.UserId", ViewBag.Users as SelectList)
+            @Html.ValidationMessageFor(model => model.Topic.UserId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Topic.Key)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Topic.Key)
+            @Html.ValidationMessageFor(model => model.Topic.Key)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Topic.FirstCommentId)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Topic.FirstCommentId)
+            @Html.ValidationMessageFor(model => model.Topic.FirstCommentId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Topic.LastCommentId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Topic.LastCommentId)
+            @Html.ValidationMessageFor(model => model.Topic.LastCommentId)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

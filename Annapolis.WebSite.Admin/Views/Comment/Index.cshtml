@@ -1,0 +1,40 @@
+﻿@using Annapolis.WebSite.Admin.Extensions
+@model IPagedList<Annapolis.WebSite.Admin.ViewModels.TopicViewModel>
+
+@{
+    ViewBag.Title = "Comment Management";
+}
+
+<h2>Comment Management</h2>
+
+
+
+@using (Html.BeginForm("Search", "Comment"))
+{ 
+<div class="col-lg-9 input-group">
+    <input type="text" name="searchKey" placeholder="comment" class="form-control" value="@ViewBag.SearchKey">
+    <span class="input-group-btn">
+       <button class="btn btn-default" type="submit">Search</button>
+       @Html.AdminActionLink("Reset", "Index", "Comment",new {@class = "btn" })
+    </span>
+</div>
+}  
+<hr />  
+
+<div class="panel-group">
+@foreach (var item in Model) 
+{
+    @Html.Partial("_CommentItem", item);
+}
+</div>
+
+<br />
+<div id='Paging' style="text-align:left">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.AdminAction("Index", new { page }))
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.collapse').collapse();
+    });
+</script>

@@ -1,0 +1,46 @@
+﻿@model PageListClient<CommentClient>
+
+@{
+    ViewBag.Title = "Comment";
+}
+
+<div id="divComment-j">
+    <div data-bind="foreach: models"> 
+        <div class="media">
+            <div class="pull-right">
+                <img class="media-object thumbnailimage-small" data-bind='attr: { src: topicThumbnail }'  />
+            </div>
+            <div class="media-body">
+                <a class="media-heading" data-bind='text: topicTitle, attr: { href: "/topic/show/" + topicId() }'></a>
+                <div class="row-space-10"><span class="badge badge-warning">Comments</span></div>
+                <div data-bind='attr: { id: "comment-view-holder_" + $index() }'>
+                    <div data-bind='html: content' class="comment-view-content-j"></div>
+                    <div data-bind="if: !isLocked()">
+                      <a href="#" data-bind='click: fn.commentEditButtonClick.bind($data, $index(), { canUploadDocument: canUploadDocument(), canUploadImage: canUploadImage(), uploadUrl: "/uploadFile/commentupload/" + threadId() })'><i class="icon-pencil"></i>@LocaleResources["App.Edit"]</a>
+                    </div>
+                    <div data-bind="if: isLocked">
+                        <span class="label label-warning">Locked</span>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div data-bind="pagination:'/api/user/comment'"></div>
+</div>
+<div id="comment-edit-holder-j">
+    <textarea></textarea>
+    <button class="btn comment-edit-save-j">@LocaleResources["App.Save"]</button>
+    <button class="btn comment-edit-cancel-j">@LocaleResources["App.Cancel"]</button>
+</div>
+@{
+    ScriptRegister.AddJson("pageComments", Model);
+    ScriptRegister.AddKnockOutBinding("pageComments", "#divComment-j");
+    Model.GenerateUniqueId();
+ }  
+<script type="text/javascript">
+    amplify.subscribe($ca.notification.pageNumberChanged + '@Model.UniqueId', function (event) {
+        var url = event.url + '?page=' + event.pageNumber;
+        pageComments.basicTargetModelAjax(url, null, pageComments, { type: 'GET' });
+    });
+</script>

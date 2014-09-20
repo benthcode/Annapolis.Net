@@ -1,0 +1,286 @@
+﻿@model Annapolis.WebSite.Admin.Models.MemberUser
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<form class="form-horizontal">
+
+<fieldset class="control-group">
+    <legend>MemberUser</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RegisterEmail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RegisterEmail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactEmail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactEmail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PasswordSalt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PasswordSalt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Token)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Token)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TokenGeneratedTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TokenGeneratedTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PasswordQuestion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PasswordQuestion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PasswordAnswer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PasswordAnswer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FailedPasswordAttemptCount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FailedPasswordAttemptCount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FailedPasswordAnswerAttemptCount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FailedPasswordAnswerAttemptCount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsApproved)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsApproved)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsLockedOut)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsLockedOut)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreateDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreateDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastLoginDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastLoginDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastPasswordChangedDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastPasswordChangedDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastLockoutDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastLockoutDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastActivityDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastActivityDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LoginIdExpiresDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LoginIdExpiresDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BirthDay)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BirthDay)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Avatar)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Avatar)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Comment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Comment)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Signature)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Signature)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Location)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PersonalWebsite)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PersonalWebsite)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Credit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Credit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsExternalAccount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsExternalAccount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ExternalAccessId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ExternalAccessId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OpenId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OpenId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ExternalAccessToken)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ExternalAccessToken)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DisableEmailNotifications)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DisableEmailNotifications)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DisableComment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DisableComment)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DisablePrivateMessages)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DisablePrivateMessages)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DisableFileUploads)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DisableFileUploads)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Latitude)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Latitude)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Longitude)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Longitude)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MemberRole.RoleName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MemberRole.RoleName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Key)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Key)
+    </div>
+
+</fieldset>
+</form>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

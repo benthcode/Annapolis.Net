@@ -1,0 +1,38 @@
+﻿@model PageListClient<TopicClient>
+
+@{
+    ViewBag.Title = "Topic";
+}
+
+<div id="divPageTopic-j">
+    <div data-bind="foreach: models">
+        <div class="media">
+            <div class="pull-right">
+                <img class="media-object thumbnailimage-small" data-bind='attr: { src: thumbnail }' />
+            </div>
+            <div>
+                <a class="media-heading" data-bind='text: title, attr: { href: "/topic/show/"+id() }'></a>
+                <div data-bind="html: subTitle"></div>
+            </div>
+        </div>
+        <div data-bind="if: !isLocked()">
+            <a data-bind='attr: { href: "/topic/edit/" + id() }' ><i class="icon-pencil"></i>@LocaleResources["App.Edit"]</a>
+        </div>
+        <div data-bind="if: isLocked">
+            <span class="label label-warning">Locked</span>
+        </div>
+        <hr />
+    </div>
+    <div data-bind="pagination:'/api/user/topic'"></div>
+</div>
+@{
+    ScriptRegister.AddJson("pageTopic", Model);
+    ScriptRegister.AddKnockOutBinding("pageTopic", "#divPageTopic-j");
+    Model.GenerateUniqueId();    
+}
+<script type="text/javascript">
+    amplify.subscribe($ca.notification.pageNumberChanged + '@Model.UniqueId', function (event) {
+        var url = event.url + '?page=' + event.pageNumber;
+        pageTopic.basicTargetModelAjax(url, null, pageTopic, { type: 'GET' });
+    });
+</script>

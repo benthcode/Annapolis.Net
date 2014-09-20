@@ -1,0 +1,26 @@
+﻿@using System.Text
+@model TopicClient
+@{
+    Layout = null;
+    var tagLists = ViewBag.TagLists as List<TagListClient>;
+    StringBuilder selectJsEvent = new StringBuilder(256);
+    for (int i = 0; i < tagLists.Count; i++)
+    {
+        var tagList = tagLists[i];
+<div>@Html.KoRadioButtonSetList(tagList)</div>
+        selectJsEvent.AppendFormat("$ca.notification.selectableListValueChanged+'_{0}'+' '", Html.Raw(tagList.UniqueId));
+        if (i < tagLists.Count - 1) { selectJsEvent.Append('+'); }
+    }
+   
+    if (selectJsEvent.Length > 0)
+    {
+<script type="text/javascript">
+(function () {
+    var eventMsg = @Html.Raw(selectJsEvent); 
+    amplify.subscribe(eventMsg, function (event) {
+        topic.changeTagOption(event.group, event.newValue);
+    });
+})();
+</script>
+    }
+}

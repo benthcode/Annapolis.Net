@@ -1,0 +1,32 @@
+﻿@using Annapolis.WebSite.Admin.Extensions
+@model Annapolis.WebSite.Admin.ViewModels.TopicViewModel
+
+<div id=@(Model.Post.Id+"_comment")>
+    @using (Ajax.BeginForm("CommentItem", "Comment", new AjaxOptions { UpdateTargetId = Model.Post.Id + "_comment", HttpMethod = "POST" }))
+    {
+        <div class="panel panel-default">
+            <input type="hidden" name="Post.Id" value=@Model.Post.Id />
+            <div class="panel-heading">@Model.Topic.Title</div>
+            <div class="panel-heading">
+                <div class="panel-title"><a data-toggle="collapse" href='#collapseItem_@Model.Post.Id'>Content</a></div>        
+            </div>
+            <div id="collapseItem_@Model.Post.Id"  class="panel-collapse collapse in">
+                <div class="panel-body">@Html.Raw(Model.Post.Content)</div>  
+            </div>
+            @Html.DisplayNameFor(modelItem => Model.Post.IsSpam)
+            @Html.EditorFor(modelItem => Model.Post.IsSpam)  &nbsp|&nbsp
+            @Html.DisplayNameFor(modelItem => Model.Post.IsLocked)
+            @Html.EditorFor(modelItem => Model.Post.IsLocked) &nbsp|&nbsp
+            @Html.DisplayNameFor(modelItem => Model.Post.IsHidden)
+            @Html.EditorFor(modelItem => Model.Post.IsHidden) &nbsp|&nbsp
+             @Html.DisplayNameFor(modelItem => Model.Post.IsSolution)
+            @Html.EditorFor(modelItem => Model.Post.IsSolution) &nbsp|&nbsp
+            @Html.AdminActionLink(Model.Post.MemberUser.UserName, "Details", "MemberUser", new { Id = Model.Post.MemberUser.Id}, null ) &nbsp|&nbsp
+            <input type="submit" value="Save" />&nbsp|&nbsp
+            @Html.AdminActionLink("Edit", "Edit", new { id=Model.Post.Id }) |
+            @Html.AdminActionLink("Details", "Details", new { id=Model.Post.Id }) |
+            @Html.AdminActionLink("Delete", "Delete", new { id=Model.Post.Id })
+        </div>
+    }
+    <br />
+</div>

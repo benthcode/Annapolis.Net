@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Show";
+    var currentThread = ViewBag.CurrentThread as ContentThread;
+}
+
+<div class="row-fluid">
+    <div class="span12">
+      <div class="span2 pull-right">
+       <button auth-required="true" auth-link="/topic/new/@currentThread.Key" auth-duration="0" class="btn btn-block btn-info btn-primary pull-right">@LocaleResources["Topic.CreateTopic"]</button>
+      </div>
+    </div>
+    <div id="divTopic-j" class="row-space-35">
+        <div>
+            <div data-bind="with: topic">
+                <div style="bottom: 0;" data-bind="if: isLocked">
+                    <div class="alert alert-danger">This topic is locked. You cannot make commments at this time.</div>
+                </div>
+                <div>
+                    <div class="pull-right">
+                        <img data-bind='attr: {src: thumbnail}' class="thumbnailimage-middle" />
+                    </div>
+                    <span class="badge badge-info" data-bind="text: title"></span>
+                    <div class="row-space-15" data-bind="text: subTitle"></div>
+                    <div class="row-space-15" data-bind="html: content"></div>
+                </div>
+                <div>
+                    <i data-bind="with: vote">
+                        <button class="btn btn-mini" data-bind="authClick: voteUp"><i class="icon-thumbs-up"></i>&nbsp;<span data-bind='text: voteUpCount'></span></button>
+                    </i>
+                    <i class="icon-calendar"></i><span class="badge badge-info" data-bind="text: '@LocaleResources["App.PublishedBy"]    '+zone.toTimeDiff(lastUpdateTime())"></span>
+                    <i class="icon-user"></i><span class="badge badge-info" data-bind="text: userName"></span>
+                </div>
+            </div>
+            <div>
+                <hr />
+                <span class="badge badge-warning">Comments</span>
+                <hr />
+            </div>
+            
+            <div data-bind="foreach: pageComments.models">
+                <div class="row-space-20">
+                    <div>
+                        <div data-bind='html: content'></div>
+                    </div>
+                    <div class="row-space-15">
+                        <i data-bind="with: vote">
+                             <button class="btn btn-mini" data-bind="authClick: voteUp"><i class="icon-thumbs-up"></i>&nbsp;<span data-bind='text: voteUpCount'></span></button>
+                        </i>
+                        <i class="icon-calendar"></i><span class="badge badge-info" data-bind="text: '@LocaleResources["App.PublishedBy"]    '+zone.toTimeDiff(lastUpdateTime())"></span>
+                        <i class="icon-user"></i><span class="badge badge-info" data-bind="text: userName"></span>
+                    </div>
+                 </div>
+                 <hr />
+            </div>
+        </div>
+    </div>
+    <div id="divPage-j" class="row-space-35">
+        <div data-bind="with: pageComments">
+            <div data-bind="pagination, attr:{ id: $root.topic.id() }"></div>
+        </div>
+    </div>
+    <div id="divNewCommentHolder-j" class="row-space-35 span12">
+        <div><textarea readonly data-bind="kindEditorValue: content, attr: {uploadUrl: '/uploadFile/commentupload/@(currentThread.Id)', canUploadDocument:canUploadDocument(), canUploadImage:canUploadImage(), height:100 }"></textarea></div>
+        <button class="btn btn-small btn-warning pull-right row-space-10"  data-bind="enable: isOperationValid, authClick:save, svActionKey:'Save', svBack:serverStatus, svSuccCallBack:fn.afterNewCommentSaved " >@LocaleResources["Comment.Publish"]</button>
+    </div>
+
+</div>
+
+@{
+    ScriptRegister.AddKnockOutBinding("commentsPerTopic", "#divTopic-j, #divPage-j");
+    ScriptRegister.AddKnockOutBinding("newComment", "#divNewCommentHolder-j");
+ }  
+<script type="text/javascript">
+    amplify.subscribe($ca.notification.serverUserAuthenticatedEvent, function () {
+        newComment.checkUploadPermission("/api/comment/checkuploadpermissionfornewcomment", function () {
+            var newCommentHolder = $('#divNewCommentHolder-j');
+            KindEditor.remove(newCommentHolder.find('textarea'));
+            ko.unapplyBindings(newCommentHolder, false);
+            ko.applyBindings(newComment, newCommentHolder[0]);
+        });
+    });
+    $(document).ready(function(){
+        if(commentsPerTopic.topic.isLocked() === true){
+            $("#divNewCommentHolder-j").hide();
+        }
+    });
+</script>
+

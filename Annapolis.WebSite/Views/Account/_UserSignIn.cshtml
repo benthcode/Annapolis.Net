@@ -1,0 +1,19 @@
+﻿@model UserSignInViewModel
+
+
+@using (Html.BeginForm("UserSignIn", "Account"))
+{
+    if (ViewBag.ErrorMessage != null)
+    {
+        <div>@ViewBag.ErrorMessage</div> 
+    }
+    <div>@LocaleResources["Membership.UserName"]</div>
+    <div>@Html.TextBoxFor(m => m.Identifier)</div>
+    <div>@Html.ValidationMessageFor(x => x.Identifier)</div>
+    <div>@LocaleResources["Membership.Password"]</div>
+    <div>@Html.PasswordFor(m => m.Password)</div>
+    <div>@Html.ValidationMessageFor(x => x.Password)</div>
+    <div>@LocaleResources["Membership.IsCookiePersistent"]</div>
+    <div>@Html.CheckBoxFor(m => m.IsCookiePersistent)</div>
+    <input type="submit" value="@LocaleResources["Membership.SignIn"]" class="btn btn-primary" />
+}

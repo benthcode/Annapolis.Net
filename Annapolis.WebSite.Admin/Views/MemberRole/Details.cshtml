@@ -1,0 +1,36 @@
+﻿@model Annapolis.WebSite.Admin.Models.MemberRole
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>MemberRole</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RoleName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RoleName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsAdmin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsAdmin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Key)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Key)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

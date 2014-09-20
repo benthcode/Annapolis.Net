@@ -1,0 +1,20 @@
+﻿@model TopicClient
+
+<h2>@ViewBag.Title</h2>
+@{
+    var returnUrl = Model.IsNew() ? "/topic/thread/"+Model.ThreadKey : "/user/topic";
+}
+<div id="tagOptionHolder-j">
+@Html.Partial("_TagOption", Model)
+</div>
+<div id="divTopic-j" class="row-space-35">
+    <div><span class="circle-around-content-text span2" >Title:</span><input type="text"data-bind="value: title, valueUpdate: 'afterkeydown'"  placeholder="Type title…" class="span9 offset1" maxlength="256" /></div>
+    <div><span class="circle-around-content-text span2">Sub title:</span><textarea data-bind="value: subTitle, valueUpdate: 'afterkeydown'" placeholder="Type subtitle…" class="span9 offset1" rows="4"  maxlength="1024" ></textarea></div>
+    <div><span class="circle-around-content-text span2" >Thumbnail:</span><div data-bind="kindThumbnail: thumbnail, uploadUrl: '/uploadfile/uploadthumbnail'"></div></div>
+    <div class="row-space-35"><textarea maxlength="4096" data-bind="kindEditorValue: content, attr:{ uploadUrl:'/uploadfile/topicupload/'+threadId(), canUploadDocument:canUploadDocument(), canUploadImage:canUploadImage(), width:600, height:450 }"></textarea></div>
+    <div><button class="btn btn-small btn-warning pull-right row-space-10" data-bind='enable: isOperationValid, click: save, svBack: serverStatus, svSuccUrl:"@returnUrl" ' >@LocaleResources["App.Save"]</button></div>
+</div>
+@{
+ScriptRegister.AddKnockOutBinding("topic", "#divTopic-j");
+}
+

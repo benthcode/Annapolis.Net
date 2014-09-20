@@ -1,0 +1,14 @@
+﻿1. open source libraries
+   json2  amplify  jquery   jquery.noty   knockout   jsclass
+
+2. circle
+   circle.js  => the first file for circle, define constants, basic event ...
+   circle.utility.js => define specific utility functions for circle
+
+3. site
+   site.js 
+    => define the behavior functions for all the pages, which means that this file should be include in all the pages.
+       the functions are like the common callback function to process the server notification reply
+
+   site.layout.js -> depend on circle.model.user
+    => define functions specific for the layout. The main function is for user registration, login, etc.

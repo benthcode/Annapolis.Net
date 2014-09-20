@@ -1,0 +1,316 @@
+﻿@model Annapolis.WebSite.Admin.Models.Setting
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Setting</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsDefault)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsDefault)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HomePageController)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HomePageController)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HomePageAction)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HomePageAction)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ForumName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ForumName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ForumUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ForumUrl)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsClosed)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsClosed)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Theme)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Theme)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Skin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Skin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SMTPHost)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SMTPHost)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SMTPPort)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SMTPPort)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SMTPUsername)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SMTPUsername)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SMTPPassword)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SMTPPassword)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SMTPEnableSSL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SMTPEnableSSL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AdminEmailAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AdminEmailAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmailSendOnNewUser)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmailSendOnNewUser)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmailVerifyOnNewUser)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmailVerifyOnNewUser)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnableSocialLogins)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnableSocialLogins)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AutoApproveNewMember)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AutoApproveNewMember)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TopicsPerPage)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TopicsPerPage)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CommentsPerPage)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CommentsPerPage)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadFileRootPath)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadFileRootPath)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UpdoadFilePathHashLevel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UpdoadFilePathHashLevel)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadImageFileExtension)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadImageFileExtension)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadImageFileOrginalMaxByteSize)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadImageFileOrginalMaxByteSize)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadImageFileMaxByteSize)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadImageFileMaxByteSize)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadImageFileMaxWidth)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadImageFileMaxWidth)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadImageFileMaxHeight)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadImageFileMaxHeight)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadDocumentFileExtension)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadDocumentFileExtension)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadDocumentFileMaxByteSize)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadDocumentFileMaxByteSize)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadFlashFileExtension)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadFlashFileExtension)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadFlashFileMaxByteSize)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadFlashFileMaxByteSize)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadMediaFileExtension)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadMediaFileExtension)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadMediaFileMaxByteSize)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadMediaFileMaxByteSize)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadThumbnailPath)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadThumbnailPath)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadThumbnailFileMaxByteSize)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadThumbnailFileMaxByteSize)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadThumbnailWidth)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadThumbnailWidth)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UploadThumbnailHeight)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UploadThumbnailHeight)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BannedWordReplaceHolder)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BannedWordReplaceHolder)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MemberUser.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MemberUser.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MemberRole.RoleName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MemberRole.RoleName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LocaleLanguage.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LocaleLanguage.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Key)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Key)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

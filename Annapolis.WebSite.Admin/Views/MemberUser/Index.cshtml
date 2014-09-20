@@ -1,0 +1,48 @@
+﻿@model IPagedList<MemberUser>
+@using Annapolis.WebSite.Admin.Extensions
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "User Management";
+}
+
+<h2>User Management</h2>
+
+@using (Html.BeginForm("Search", "MemberUser"))
+{ 
+<div class="col-lg-5 input-group">
+    <input type="text" name="searchKey" placeholder="user name or email" class="form-control" value="@ViewBag.SearchKey">
+    <span class="input-group-btn">
+       <button class="btn btn-default" type="submit">Search</button>
+       @Html.ActionLink("Reset", "Index", "MemberUser",new {@class = "btn" })
+    </span>
+</div>
+}
+<hr />  
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>UserName</th>
+            <th>RegisterEmail</th>
+            <th>ContactEmail</th>
+            <th>RoleName</th>
+            <th>CreateDate</th>
+            <th>LastLoginDate</th>
+            <th>IsApproved</th>
+            <th>IsLockedOut</th>
+            <th>Topics</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        @Html.Partial("_UserItem", item);
+    }
+    </tbody>
+</table>
+
+<br />
+<div id='Paging' style="text-align: left">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.AdminAction("Index", new { page }))
+</div>

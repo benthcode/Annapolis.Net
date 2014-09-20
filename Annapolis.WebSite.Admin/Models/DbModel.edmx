@@ -1,0 +1,1837 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CircleDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="CircleDBModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="CircleDBModel.Store.__MigrationHistory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Content_MapTopicTag" EntityType="CircleDBModel.Store.Content_MapTopicTag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentBannedWord" EntityType="CircleDBModel.Store.ContentBannedWord" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentComment" EntityType="CircleDBModel.Store.ContentComment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentTag" EntityType="CircleDBModel.Store.ContentTag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentTagCategory" EntityType="CircleDBModel.Store.ContentTagCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentTagCategoryOnThread" EntityType="CircleDBModel.Store.ContentTagCategoryOnThread" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentThread" EntityType="CircleDBModel.Store.ContentThread" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentTopic" EntityType="CircleDBModel.Store.ContentTopic" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentVote" EntityType="CircleDBModel.Store.ContentVote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LocaleLanguage" EntityType="CircleDBModel.Store.LocaleLanguage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LocaleResourceKey" EntityType="CircleDBModel.Store.LocaleResourceKey" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LocaleResourceValue" EntityType="CircleDBModel.Store.LocaleResourceValue" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MemberRole" EntityType="CircleDBModel.Store.MemberRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MemberUser" EntityType="CircleDBModel.Store.MemberUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Permission" EntityType="CircleDBModel.Store.Permission" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PermissionOnThread" EntityType="CircleDBModel.Store.PermissionOnThread" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Setting" EntityType="CircleDBModel.Store.Setting" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UploadFile" EntityType="CircleDBModel.Store.UploadFile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UploadFileCategory" EntityType="CircleDBModel.Store.UploadFileCategory" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_dbo_Content_MapTopicTag_dbo_ContentTag_TagId" Association="CircleDBModel.Store.FK_dbo_Content_MapTopicTag_dbo_ContentTag_TagId">
+            <End Role="ContentTag" EntitySet="ContentTag" />
+            <End Role="Content_MapTopicTag" EntitySet="Content_MapTopicTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Content_MapTopicTag_dbo_ContentTopic_TopicId" Association="CircleDBModel.Store.FK_dbo_Content_MapTopicTag_dbo_ContentTopic_TopicId">
+            <End Role="ContentTopic" EntitySet="ContentTopic" />
+            <End Role="Content_MapTopicTag" EntitySet="Content_MapTopicTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentComment_dbo_ContentTopic_TopicId" Association="CircleDBModel.Store.FK_dbo_ContentComment_dbo_ContentTopic_TopicId">
+            <End Role="ContentTopic" EntitySet="ContentTopic" />
+            <End Role="ContentComment" EntitySet="ContentComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentComment_dbo_MemberUser_UserId" Association="CircleDBModel.Store.FK_dbo_ContentComment_dbo_MemberUser_UserId">
+            <End Role="MemberUser" EntitySet="MemberUser" />
+            <End Role="ContentComment" EntitySet="ContentComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentTag_dbo_ContentTag_ParentTagId" Association="CircleDBModel.Store.FK_dbo_ContentTag_dbo_ContentTag_ParentTagId">
+            <End Role="ContentTag" EntitySet="ContentTag" />
+            <End Role="ContentTag1" EntitySet="ContentTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentTag_dbo_ContentTagCategory_CategoryId" Association="CircleDBModel.Store.FK_dbo_ContentTag_dbo_ContentTagCategory_CategoryId">
+            <End Role="ContentTagCategory" EntitySet="ContentTagCategory" />
+            <End Role="ContentTag" EntitySet="ContentTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentTagCategoryOnThread_dbo_ContentTagCategory_TagCategoryId" Association="CircleDBModel.Store.FK_dbo_ContentTagCategoryOnThread_dbo_ContentTagCategory_TagCategoryId">
+            <End Role="ContentTagCategory" EntitySet="ContentTagCategory" />
+            <End Role="ContentTagCategoryOnThread" EntitySet="ContentTagCategoryOnThread" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentTagCategoryOnThread_dbo_ContentThread_ThreadId" Association="CircleDBModel.Store.FK_dbo_ContentTagCategoryOnThread_dbo_ContentThread_ThreadId">
+            <End Role="ContentThread" EntitySet="ContentThread" />
+            <End Role="ContentTagCategoryOnThread" EntitySet="ContentTagCategoryOnThread" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentThread_dbo_ContentThread_ParentThreadId" Association="CircleDBModel.Store.FK_dbo_ContentThread_dbo_ContentThread_ParentThreadId">
+            <End Role="ContentThread" EntitySet="ContentThread" />
+            <End Role="ContentThread1" EntitySet="ContentThread" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentTopic_dbo_ContentThread_ThreadId" Association="CircleDBModel.Store.FK_dbo_ContentTopic_dbo_ContentThread_ThreadId">
+            <End Role="ContentThread" EntitySet="ContentThread" />
+            <End Role="ContentTopic" EntitySet="ContentTopic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentTopic_dbo_MemberUser_UserId" Association="CircleDBModel.Store.FK_dbo_ContentTopic_dbo_MemberUser_UserId">
+            <End Role="MemberUser" EntitySet="MemberUser" />
+            <End Role="ContentTopic" EntitySet="ContentTopic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentVote_dbo_ContentComment_CommentId" Association="CircleDBModel.Store.FK_dbo_ContentVote_dbo_ContentComment_CommentId">
+            <End Role="ContentComment" EntitySet="ContentComment" />
+            <End Role="ContentVote" EntitySet="ContentVote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentVote_dbo_MemberUser_UserId" Association="CircleDBModel.Store.FK_dbo_ContentVote_dbo_MemberUser_UserId">
+            <End Role="MemberUser" EntitySet="MemberUser" />
+            <End Role="ContentVote" EntitySet="ContentVote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_LocaleResourceValue_dbo_LocaleLanguage_LanguageId" Association="CircleDBModel.Store.FK_dbo_LocaleResourceValue_dbo_LocaleLanguage_LanguageId">
+            <End Role="LocaleLanguage" EntitySet="LocaleLanguage" />
+            <End Role="LocaleResourceValue" EntitySet="LocaleResourceValue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_LocaleResourceValue_dbo_LocaleResourceKey_ResourceKeyId" Association="CircleDBModel.Store.FK_dbo_LocaleResourceValue_dbo_LocaleResourceKey_ResourceKeyId">
+            <End Role="LocaleResourceKey" EntitySet="LocaleResourceKey" />
+            <End Role="LocaleResourceValue" EntitySet="LocaleResourceValue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_MemberUser_dbo_MemberRole_RoleId" Association="CircleDBModel.Store.FK_dbo_MemberUser_dbo_MemberRole_RoleId">
+            <End Role="MemberRole" EntitySet="MemberRole" />
+            <End Role="MemberUser" EntitySet="MemberUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PermissionOnThread_dbo_ContentThread_ThreadId" Association="CircleDBModel.Store.FK_dbo_PermissionOnThread_dbo_ContentThread_ThreadId">
+            <End Role="ContentThread" EntitySet="ContentThread" />
+            <End Role="PermissionOnThread" EntitySet="PermissionOnThread" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PermissionOnThread_dbo_MemberRole_RoleId" Association="CircleDBModel.Store.FK_dbo_PermissionOnThread_dbo_MemberRole_RoleId">
+            <End Role="MemberRole" EntitySet="MemberRole" />
+            <End Role="PermissionOnThread" EntitySet="PermissionOnThread" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PermissionOnThread_dbo_Permission_PermissionId" Association="CircleDBModel.Store.FK_dbo_PermissionOnThread_dbo_Permission_PermissionId">
+            <End Role="Permission" EntitySet="Permission" />
+            <End Role="PermissionOnThread" EntitySet="PermissionOnThread" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Setting_dbo_LocaleLanguage_LanguageId" Association="CircleDBModel.Store.FK_dbo_Setting_dbo_LocaleLanguage_LanguageId">
+            <End Role="LocaleLanguage" EntitySet="LocaleLanguage" />
+            <End Role="Setting" EntitySet="Setting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Setting_dbo_MemberRole_NewMemberStartRoleId" Association="CircleDBModel.Store.FK_dbo_Setting_dbo_MemberRole_NewMemberStartRoleId">
+            <End Role="MemberRole" EntitySet="MemberRole" />
+            <End Role="Setting" EntitySet="Setting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Setting_dbo_MemberUser_SuperAdminUserId" Association="CircleDBModel.Store.FK_dbo_Setting_dbo_MemberUser_SuperAdminUserId">
+            <End Role="MemberUser" EntitySet="MemberUser" />
+            <End Role="Setting" EntitySet="Setting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UploadFile_dbo_MemberUser_UserId" Association="CircleDBModel.Store.FK_dbo_UploadFile_dbo_MemberUser_UserId">
+            <End Role="MemberUser" EntitySet="MemberUser" />
+            <End Role="UploadFile" EntitySet="UploadFile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UploadFile_dbo_UploadFileCategory_CategoryId" Association="CircleDBModel.Store.FK_dbo_UploadFile_dbo_UploadFileCategory_CategoryId">
+            <End Role="UploadFileCategory" EntitySet="UploadFileCategory" />
+            <End Role="UploadFile" EntitySet="UploadFile" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" Nullable="false" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="Content_MapTopicTag">
+          <Key>
+            <PropertyRef Name="TopicId" />
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="TopicId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TagId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContentBannedWord">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Word" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsRequiredToCheck" Type="bit" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="ContentComment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="OriginalContent" Type="nvarchar(max)" />
+          <Property Name="IsSpam" Type="bit" Nullable="false" />
+          <Property Name="IsLocked" Type="bit" Nullable="false" />
+          <Property Name="IsHidden" Type="bit" Nullable="false" />
+          <Property Name="IsSolution" Type="bit" Nullable="false" />
+          <Property Name="IsAttachedToTopic" Type="bit" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime" Nullable="false" />
+          <Property Name="TopicId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="VoteUpCount" Type="int" Nullable="false" />
+          <Property Name="VoteDownCount" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="ContentTag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="512" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="IsHot" Type="bit" Nullable="false" />
+          <Property Name="IsLocked" Type="bit" Nullable="false" />
+          <Property Name="IsHidden" Type="bit" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime" />
+          <Property Name="CategoryId" Type="uniqueidentifier" />
+          <Property Name="ParentTagId" Type="uniqueidentifier" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="ContentTagCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="IsLocked" Type="bit" Nullable="false" />
+          <Property Name="IsHidden" Type="bit" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="ContentTagCategoryOnThread">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TagCategoryId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ThreadId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OnlyShowHotTag" Type="bit" Nullable="false" />
+          <Property Name="IncludeAll" Type="bit" Nullable="false" />
+          <Property Name="IncludeOther" Type="bit" Nullable="false" />
+          <Property Name="IsTicked" Type="bit" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="ContentThread">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="512" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1024" />
+          <Property Name="IsLocked" Type="bit" Nullable="false" />
+          <Property Name="IsHidden" Type="bit" Nullable="false" />
+          <Property Name="IsAbstract" Type="bit" Nullable="false" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="ParentThreadId" Type="uniqueidentifier" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="ContentTopic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="512" />
+          <Property Name="OriginalTitle" Type="nvarchar" MaxLength="512" />
+          <Property Name="SubTitle" Type="nvarchar" MaxLength="1024" />
+          <Property Name="OriginalSubTitle" Type="nvarchar" MaxLength="1024" />
+          <Property Name="TitleUrl" Type="nvarchar(max)" />
+          <Property Name="Thumbnail" Type="nvarchar" MaxLength="512" />
+          <Property Name="IsSticky" Type="bit" Nullable="false" />
+          <Property Name="IsLocked" Type="bit" Nullable="false" />
+          <Property Name="IsHidden" Type="bit" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime" Nullable="false" />
+          <Property Name="ThreadId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+          <Property Name="FirstCommentId" Type="uniqueidentifier" />
+          <Property Name="LastCommentId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="ContentVote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Amount" Type="smallint" Nullable="false" />
+          <Property Name="VoteDate" Type="datetime" Nullable="false" />
+          <Property Name="CommentId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="LocaleLanguage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="Culture" Type="nvarchar" MaxLength="16" />
+          <Property Name="LanguageImageFileName" Type="nvarchar" MaxLength="255" />
+          <Property Name="RightToLeft" Type="bit" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="LocaleResourceKey">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ResourceKey" Type="nvarchar" MaxLength="255" />
+          <Property Name="Note" Type="nvarchar" MaxLength="255" />
+          <Property Name="DateAdded" Type="datetime" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="LocaleResourceValue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ResourceValue" Type="nvarchar" MaxLength="1024" />
+          <Property Name="Note" Type="nvarchar" MaxLength="255" />
+          <Property Name="LanguageId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ResourceKeyId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="MemberRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="64" />
+          <Property Name="IsAdmin" Type="bit" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="MemberUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="64" />
+          <Property Name="RegisterEmail" Type="nvarchar" MaxLength="64" />
+          <Property Name="ContactEmail" Type="nvarchar" MaxLength="64" />
+          <Property Name="Password" Type="nvarchar" MaxLength="128" />
+          <Property Name="PasswordSalt" Type="nvarchar" MaxLength="64" />
+          <Property Name="Token" Type="nvarchar(max)" />
+          <Property Name="TokenGeneratedTime" Type="datetime" Nullable="false" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="64" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" />
+          <Property Name="LastLockoutDate" Type="datetime" />
+          <Property Name="LastActivityDate" Type="datetime" />
+          <Property Name="LoginIdExpiresDate" Type="datetime" />
+          <Property Name="BirthDay" Type="datetime" />
+          <Property Name="Avatar" Type="nvarchar" MaxLength="256" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="1024" />
+          <Property Name="Signature" Type="nvarchar" MaxLength="256" />
+          <Property Name="Location" Type="nvarchar" MaxLength="256" />
+          <Property Name="PersonalWebsite" Type="nvarchar" MaxLength="256" />
+          <Property Name="Credit" Type="int" Nullable="false" />
+          <Property Name="IsExternalAccount" Type="bit" Nullable="false" />
+          <Property Name="ExternalAccessId" Type="nvarchar" MaxLength="128" />
+          <Property Name="OpenId" Type="nvarchar" MaxLength="128" />
+          <Property Name="ExternalAccessToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="DisableEmailNotifications" Type="bit" Nullable="false" />
+          <Property Name="DisableComment" Type="bit" Nullable="false" />
+          <Property Name="DisablePrivateMessages" Type="bit" Nullable="false" />
+          <Property Name="DisableFileUploads" Type="bit" Nullable="false" />
+          <Property Name="Latitude" Type="nvarchar" MaxLength="128" />
+          <Property Name="Longitude" Type="nvarchar" MaxLength="128" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="PermissionOnThread">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsGranted" Type="bit" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ThreadId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PermissionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+          <Property Name="HomePageController" Type="nvarchar(max)" />
+          <Property Name="HomePageAction" Type="nvarchar(max)" />
+          <Property Name="ForumName" Type="nvarchar(max)" />
+          <Property Name="ForumUrl" Type="nvarchar(max)" />
+          <Property Name="IsClosed" Type="bit" Nullable="false" />
+          <Property Name="Theme" Type="nvarchar(max)" />
+          <Property Name="Skin" Type="nvarchar(max)" />
+          <Property Name="SMTPHost" Type="nvarchar(max)" />
+          <Property Name="SMTPPort" Type="int" />
+          <Property Name="SMTPUsername" Type="nvarchar(max)" />
+          <Property Name="SMTPPassword" Type="nvarchar(max)" />
+          <Property Name="SMTPEnableSSL" Type="bit" />
+          <Property Name="AdminEmailAddress" Type="nvarchar(max)" />
+          <Property Name="EmailSendOnNewUser" Type="bit" Nullable="false" />
+          <Property Name="EmailVerifyOnNewUser" Type="bit" Nullable="false" />
+          <Property Name="EnableSocialLogins" Type="bit" Nullable="false" />
+          <Property Name="AutoApproveNewMember" Type="bit" Nullable="false" />
+          <Property Name="TopicsPerPage" Type="int" Nullable="false" />
+          <Property Name="CommentsPerPage" Type="int" Nullable="false" />
+          <Property Name="DefaultTopicThumbnailFile" Type="nvarchar" MaxLength="1024" />
+          <Property Name="UploadFileRootPath" Type="nvarchar(max)" />
+          <Property Name="UpdoadFilePathHashLevel" Type="int" Nullable="false" />
+          <Property Name="UploadImageFileExtension" Type="nvarchar(max)" />
+          <Property Name="UploadImageFileOrginalMaxByteSize" Type="int" Nullable="false" />
+          <Property Name="UploadImageFileMaxByteSize" Type="int" Nullable="false" />
+          <Property Name="UploadImageFileMaxWidth" Type="int" Nullable="false" />
+          <Property Name="UploadImageFileMaxHeight" Type="int" Nullable="false" />
+          <Property Name="UploadDocumentFileExtension" Type="nvarchar(max)" />
+          <Property Name="UploadDocumentFileMaxByteSize" Type="int" Nullable="false" />
+          <Property Name="UploadFlashFileExtension" Type="nvarchar(max)" />
+          <Property Name="UploadFlashFileMaxByteSize" Type="int" Nullable="false" />
+          <Property Name="UploadMediaFileExtension" Type="nvarchar(max)" />
+          <Property Name="UploadMediaFileMaxByteSize" Type="int" Nullable="false" />
+          <Property Name="UploadThumbnailPath" Type="nvarchar(max)" />
+          <Property Name="UploadThumbnailFileMaxByteSize" Type="int" Nullable="false" />
+          <Property Name="UploadThumbnailWidth" Type="int" Nullable="false" />
+          <Property Name="UploadThumbnailHeight" Type="int" Nullable="false" />
+          <Property Name="BannedWordReplaceHolder" Type="nvarchar(max)" />
+          <Property Name="SuperAdminUserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NewMemberStartRoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LanguageId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="UploadFile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="256" />
+          <Property Name="UploadDate" Type="datetime" Nullable="false" />
+          <Property Name="CategoryId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AttachId" Type="uniqueidentifier" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="UploadFileCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+          <Property Name="Key" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <Association Name="FK_dbo_Content_MapTopicTag_dbo_ContentTag_TagId">
+          <End Role="ContentTag" Type="CircleDBModel.Store.ContentTag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Content_MapTopicTag" Type="CircleDBModel.Store.Content_MapTopicTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentTag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Content_MapTopicTag">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Content_MapTopicTag_dbo_ContentTopic_TopicId">
+          <End Role="ContentTopic" Type="CircleDBModel.Store.ContentTopic" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Content_MapTopicTag" Type="CircleDBModel.Store.Content_MapTopicTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentTopic">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Content_MapTopicTag">
+              <PropertyRef Name="TopicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentComment_dbo_ContentTopic_TopicId">
+          <End Role="ContentTopic" Type="CircleDBModel.Store.ContentTopic" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ContentComment" Type="CircleDBModel.Store.ContentComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentTopic">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentComment">
+              <PropertyRef Name="TopicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentComment_dbo_MemberUser_UserId">
+          <End Role="MemberUser" Type="CircleDBModel.Store.MemberUser" Multiplicity="1" />
+          <End Role="ContentComment" Type="CircleDBModel.Store.ContentComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentComment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentTag_dbo_ContentTag_ParentTagId">
+          <End Role="ContentTag" Type="CircleDBModel.Store.ContentTag" Multiplicity="0..1" />
+          <End Role="ContentTag1" Type="CircleDBModel.Store.ContentTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentTag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentTag1">
+              <PropertyRef Name="ParentTagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentTag_dbo_ContentTagCategory_CategoryId">
+          <End Role="ContentTagCategory" Type="CircleDBModel.Store.ContentTagCategory" Multiplicity="0..1" />
+          <End Role="ContentTag" Type="CircleDBModel.Store.ContentTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentTagCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentTag">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentTagCategoryOnThread_dbo_ContentTagCategory_TagCategoryId">
+          <End Role="ContentTagCategory" Type="CircleDBModel.Store.ContentTagCategory" Multiplicity="1" />
+          <End Role="ContentTagCategoryOnThread" Type="CircleDBModel.Store.ContentTagCategoryOnThread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentTagCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentTagCategoryOnThread">
+              <PropertyRef Name="TagCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentTagCategoryOnThread_dbo_ContentThread_ThreadId">
+          <End Role="ContentThread" Type="CircleDBModel.Store.ContentThread" Multiplicity="1" />
+          <End Role="ContentTagCategoryOnThread" Type="CircleDBModel.Store.ContentTagCategoryOnThread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentThread">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentTagCategoryOnThread">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentThread_dbo_ContentThread_ParentThreadId">
+          <End Role="ContentThread" Type="CircleDBModel.Store.ContentThread" Multiplicity="0..1" />
+          <End Role="ContentThread1" Type="CircleDBModel.Store.ContentThread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentThread">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentThread1">
+              <PropertyRef Name="ParentThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentTopic_dbo_ContentThread_ThreadId">
+          <End Role="ContentThread" Type="CircleDBModel.Store.ContentThread" Multiplicity="1" />
+          <End Role="ContentTopic" Type="CircleDBModel.Store.ContentTopic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentThread">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentTopic">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentTopic_dbo_MemberUser_UserId">
+          <End Role="MemberUser" Type="CircleDBModel.Store.MemberUser" Multiplicity="1" />
+          <End Role="ContentTopic" Type="CircleDBModel.Store.ContentTopic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentTopic">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentVote_dbo_ContentComment_CommentId">
+          <End Role="ContentComment" Type="CircleDBModel.Store.ContentComment" Multiplicity="1" />
+          <End Role="ContentVote" Type="CircleDBModel.Store.ContentVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentComment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentVote">
+              <PropertyRef Name="CommentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentVote_dbo_MemberUser_UserId">
+          <End Role="MemberUser" Type="CircleDBModel.Store.MemberUser" Multiplicity="1" />
+          <End Role="ContentVote" Type="CircleDBModel.Store.ContentVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentVote">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_LocaleResourceValue_dbo_LocaleLanguage_LanguageId">
+          <End Role="LocaleLanguage" Type="CircleDBModel.Store.LocaleLanguage" Multiplicity="1" />
+          <End Role="LocaleResourceValue" Type="CircleDBModel.Store.LocaleResourceValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocaleLanguage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LocaleResourceValue">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_LocaleResourceValue_dbo_LocaleResourceKey_ResourceKeyId">
+          <End Role="LocaleResourceKey" Type="CircleDBModel.Store.LocaleResourceKey" Multiplicity="1" />
+          <End Role="LocaleResourceValue" Type="CircleDBModel.Store.LocaleResourceValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocaleResourceKey">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LocaleResourceValue">
+              <PropertyRef Name="ResourceKeyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_MemberUser_dbo_MemberRole_RoleId">
+          <End Role="MemberRole" Type="CircleDBModel.Store.MemberRole" Multiplicity="1" />
+          <End Role="MemberUser" Type="CircleDBModel.Store.MemberUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MemberUser">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PermissionOnThread_dbo_ContentThread_ThreadId">
+          <End Role="ContentThread" Type="CircleDBModel.Store.ContentThread" Multiplicity="1" />
+          <End Role="PermissionOnThread" Type="CircleDBModel.Store.PermissionOnThread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentThread">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionOnThread">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PermissionOnThread_dbo_MemberRole_RoleId">
+          <End Role="MemberRole" Type="CircleDBModel.Store.MemberRole" Multiplicity="1" />
+          <End Role="PermissionOnThread" Type="CircleDBModel.Store.PermissionOnThread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionOnThread">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PermissionOnThread_dbo_Permission_PermissionId">
+          <End Role="Permission" Type="CircleDBModel.Store.Permission" Multiplicity="1" />
+          <End Role="PermissionOnThread" Type="CircleDBModel.Store.PermissionOnThread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permission">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionOnThread">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Setting_dbo_LocaleLanguage_LanguageId">
+          <End Role="LocaleLanguage" Type="CircleDBModel.Store.LocaleLanguage" Multiplicity="1" />
+          <End Role="Setting" Type="CircleDBModel.Store.Setting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocaleLanguage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Setting">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Setting_dbo_MemberRole_NewMemberStartRoleId">
+          <End Role="MemberRole" Type="CircleDBModel.Store.MemberRole" Multiplicity="1" />
+          <End Role="Setting" Type="CircleDBModel.Store.Setting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Setting">
+              <PropertyRef Name="NewMemberStartRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Setting_dbo_MemberUser_SuperAdminUserId">
+          <End Role="MemberUser" Type="CircleDBModel.Store.MemberUser" Multiplicity="1" />
+          <End Role="Setting" Type="CircleDBModel.Store.Setting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Setting">
+              <PropertyRef Name="SuperAdminUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UploadFile_dbo_MemberUser_UserId">
+          <End Role="MemberUser" Type="CircleDBModel.Store.MemberUser" Multiplicity="1" />
+          <End Role="UploadFile" Type="CircleDBModel.Store.UploadFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UploadFile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UploadFile_dbo_UploadFileCategory_CategoryId">
+          <End Role="UploadFileCategory" Type="CircleDBModel.Store.UploadFileCategory" Multiplicity="1" />
+          <End Role="UploadFile" Type="CircleDBModel.Store.UploadFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UploadFileCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UploadFile">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AdminDbEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="DBModel.C__MigrationHistory" />
+          <EntitySet Name="ContentBannedWords" EntityType="DBModel.ContentBannedWord" />
+          <EntitySet Name="ContentComments" EntityType="DBModel.ContentComment" />
+          <EntitySet Name="ContentTags" EntityType="DBModel.ContentTag" />
+          <EntitySet Name="ContentTagCategories" EntityType="DBModel.ContentTagCategory" />
+          <EntitySet Name="ContentTagCategoryOnThreads" EntityType="DBModel.ContentTagCategoryOnThread" />
+          <EntitySet Name="ContentThreads" EntityType="DBModel.ContentThread" />
+          <EntitySet Name="ContentTopics" EntityType="DBModel.ContentTopic" />
+          <EntitySet Name="ContentVotes" EntityType="DBModel.ContentVote" />
+          <EntitySet Name="LocaleLanguages" EntityType="DBModel.LocaleLanguage" />
+          <EntitySet Name="LocaleResourceKeys" EntityType="DBModel.LocaleResourceKey" />
+          <EntitySet Name="LocaleResourceValues" EntityType="DBModel.LocaleResourceValue" />
+          <EntitySet Name="MemberRoles" EntityType="DBModel.MemberRole" />
+          <EntitySet Name="MemberUsers" EntityType="DBModel.MemberUser" />
+          <EntitySet Name="Permissions" EntityType="DBModel.Permission" />
+          <EntitySet Name="PermissionOnThreads" EntityType="DBModel.PermissionOnThread" />
+          <EntitySet Name="Settings" EntityType="DBModel.Setting" />
+          <EntitySet Name="UploadFiles" EntityType="DBModel.UploadFile" />
+          <EntitySet Name="UploadFileCategories" EntityType="DBModel.UploadFileCategory" />
+          <AssociationSet Name="FK_dbo_ContentComment_dbo_ContentTopic_TopicId" Association="DBModel.FK_dbo_ContentComment_dbo_ContentTopic_TopicId">
+            <End Role="ContentTopic" EntitySet="ContentTopics" />
+            <End Role="ContentComment" EntitySet="ContentComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentComment_dbo_MemberUser_UserId" Association="DBModel.FK_dbo_ContentComment_dbo_MemberUser_UserId">
+            <End Role="MemberUser" EntitySet="MemberUsers" />
+            <End Role="ContentComment" EntitySet="ContentComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentVote_dbo_ContentComment_CommentId" Association="DBModel.FK_dbo_ContentVote_dbo_ContentComment_CommentId">
+            <End Role="ContentComment" EntitySet="ContentComments" />
+            <End Role="ContentVote" EntitySet="ContentVotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentTag_dbo_ContentTag_ParentTagId" Association="DBModel.FK_dbo_ContentTag_dbo_ContentTag_ParentTagId">
+            <End Role="ContentTag" EntitySet="ContentTags" />
+            <End Role="ContentTag1" EntitySet="ContentTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentTag_dbo_ContentTagCategory_CategoryId" Association="DBModel.FK_dbo_ContentTag_dbo_ContentTagCategory_CategoryId">
+            <End Role="ContentTagCategory" EntitySet="ContentTagCategories" />
+            <End Role="ContentTag" EntitySet="ContentTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentTagCategoryOnThread_dbo_ContentTagCategory_TagCategoryId" Association="DBModel.FK_dbo_ContentTagCategoryOnThread_dbo_ContentTagCategory_TagCategoryId">
+            <End Role="ContentTagCategory" EntitySet="ContentTagCategories" />
+            <End Role="ContentTagCategoryOnThread" EntitySet="ContentTagCategoryOnThreads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentTagCategoryOnThread_dbo_ContentThread_ThreadId" Association="DBModel.FK_dbo_ContentTagCategoryOnThread_dbo_ContentThread_ThreadId">
+            <End Role="ContentThread" EntitySet="ContentThreads" />
+            <End Role="ContentTagCategoryOnThread" EntitySet="ContentTagCategoryOnThreads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentThread_dbo_ContentThread_ParentThreadId" Association="DBModel.FK_dbo_ContentThread_dbo_ContentThread_ParentThreadId">
+            <End Role="ContentThread" EntitySet="ContentThreads" />
+            <End Role="ContentThread1" EntitySet="ContentThreads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentTopic_dbo_ContentThread_ThreadId" Association="DBModel.FK_dbo_ContentTopic_dbo_ContentThread_ThreadId">
+            <End Role="ContentThread" EntitySet="ContentThreads" />
+            <End Role="ContentTopic" EntitySet="ContentTopics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PermissionOnThread_dbo_ContentThread_ThreadId" Association="DBModel.FK_dbo_PermissionOnThread_dbo_ContentThread_ThreadId">
+            <End Role="ContentThread" EntitySet="ContentThreads" />
+            <End Role="PermissionOnThread" EntitySet="PermissionOnThreads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentTopic_dbo_MemberUser_UserId" Association="DBModel.FK_dbo_ContentTopic_dbo_MemberUser_UserId">
+            <End Role="MemberUser" EntitySet="MemberUsers" />
+            <End Role="ContentTopic" EntitySet="ContentTopics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ContentVote_dbo_MemberUser_UserId" Association="DBModel.FK_dbo_ContentVote_dbo_MemberUser_UserId">
+            <End Role="MemberUser" EntitySet="MemberUsers" />
+            <End Role="ContentVote" EntitySet="ContentVotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_LocaleResourceValue_dbo_LocaleLanguage_LanguageId" Association="DBModel.FK_dbo_LocaleResourceValue_dbo_LocaleLanguage_LanguageId">
+            <End Role="LocaleLanguage" EntitySet="LocaleLanguages" />
+            <End Role="LocaleResourceValue" EntitySet="LocaleResourceValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Setting_dbo_LocaleLanguage_LanguageId" Association="DBModel.FK_dbo_Setting_dbo_LocaleLanguage_LanguageId">
+            <End Role="LocaleLanguage" EntitySet="LocaleLanguages" />
+            <End Role="Setting" EntitySet="Settings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_LocaleResourceValue_dbo_LocaleResourceKey_ResourceKeyId" Association="DBModel.FK_dbo_LocaleResourceValue_dbo_LocaleResourceKey_ResourceKeyId">
+            <End Role="LocaleResourceKey" EntitySet="LocaleResourceKeys" />
+            <End Role="LocaleResourceValue" EntitySet="LocaleResourceValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_MemberUser_dbo_MemberRole_RoleId" Association="DBModel.FK_dbo_MemberUser_dbo_MemberRole_RoleId">
+            <End Role="MemberRole" EntitySet="MemberRoles" />
+            <End Role="MemberUser" EntitySet="MemberUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PermissionOnThread_dbo_MemberRole_RoleId" Association="DBModel.FK_dbo_PermissionOnThread_dbo_MemberRole_RoleId">
+            <End Role="MemberRole" EntitySet="MemberRoles" />
+            <End Role="PermissionOnThread" EntitySet="PermissionOnThreads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Setting_dbo_MemberRole_NewMemberStartRoleId" Association="DBModel.FK_dbo_Setting_dbo_MemberRole_NewMemberStartRoleId">
+            <End Role="MemberRole" EntitySet="MemberRoles" />
+            <End Role="Setting" EntitySet="Settings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Setting_dbo_MemberUser_SuperAdminUserId" Association="DBModel.FK_dbo_Setting_dbo_MemberUser_SuperAdminUserId">
+            <End Role="MemberUser" EntitySet="MemberUsers" />
+            <End Role="Setting" EntitySet="Settings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UploadFile_dbo_MemberUser_UserId" Association="DBModel.FK_dbo_UploadFile_dbo_MemberUser_UserId">
+            <End Role="MemberUser" EntitySet="MemberUsers" />
+            <End Role="UploadFile" EntitySet="UploadFiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PermissionOnThread_dbo_Permission_PermissionId" Association="DBModel.FK_dbo_PermissionOnThread_dbo_Permission_PermissionId">
+            <End Role="Permission" EntitySet="Permissions" />
+            <End Role="PermissionOnThread" EntitySet="PermissionOnThreads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UploadFile_dbo_UploadFileCategory_CategoryId" Association="DBModel.FK_dbo_UploadFile_dbo_UploadFileCategory_CategoryId">
+            <End Role="UploadFileCategory" EntitySet="UploadFileCategories" />
+            <End Role="UploadFile" EntitySet="UploadFiles" />
+          </AssociationSet>
+          <AssociationSet Name="Content_MapTopicTag" Association="DBModel.Content_MapTopicTag">
+            <End Role="ContentTag" EntitySet="ContentTags" />
+            <End Role="ContentTopic" EntitySet="ContentTopics" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ContentBannedWord">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Word" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="IsRequiredToCheck" Type="Boolean" Nullable="false" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ContentComment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="OriginalContent" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsSpam" Type="Boolean" Nullable="false" />
+          <Property Name="IsLocked" Type="Boolean" Nullable="false" />
+          <Property Name="IsSolution" Type="Boolean" Nullable="false" />
+          <Property Name="IsAttachedToTopic" Type="Boolean" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TopicId" Type="Guid" Nullable="false" />
+          <Property Name="VoteUpCount" Type="Int32" Nullable="false" />
+          <Property Name="VoteDownCount" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ContentTopic" Relationship="DBModel.FK_dbo_ContentComment_dbo_ContentTopic_TopicId" FromRole="ContentComment" ToRole="ContentTopic" />
+          <NavigationProperty Name="MemberUser" Relationship="DBModel.FK_dbo_ContentComment_dbo_MemberUser_UserId" FromRole="ContentComment" ToRole="MemberUser" />
+          <NavigationProperty Name="ContentVotes" Relationship="DBModel.FK_dbo_ContentVote_dbo_ContentComment_CommentId" FromRole="ContentComment" ToRole="ContentVote" />
+          <Property Type="Boolean" Name="IsHidden" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContentTag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="IsHot" Type="Boolean" Nullable="false" />
+          <Property Name="IsLocked" Type="Boolean" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="CategoryId" Type="Guid" />
+          <Property Name="ParentTagId" Type="Guid" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ContentTag1" Relationship="DBModel.FK_dbo_ContentTag_dbo_ContentTag_ParentTagId" FromRole="ContentTag" ToRole="ContentTag1" />
+          <NavigationProperty Name="ContentTag2" Relationship="DBModel.FK_dbo_ContentTag_dbo_ContentTag_ParentTagId" FromRole="ContentTag1" ToRole="ContentTag" />
+          <NavigationProperty Name="ContentTagCategory" Relationship="DBModel.FK_dbo_ContentTag_dbo_ContentTagCategory_CategoryId" FromRole="ContentTag" ToRole="ContentTagCategory" />
+          <NavigationProperty Name="ContentTopics" Relationship="DBModel.Content_MapTopicTag" FromRole="ContentTag" ToRole="ContentTopic" />
+          <Property Type="Boolean" Name="IsHidden" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContentTagCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="IsLocked" Type="Boolean" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ContentTags" Relationship="DBModel.FK_dbo_ContentTag_dbo_ContentTagCategory_CategoryId" FromRole="ContentTagCategory" ToRole="ContentTag" />
+          <NavigationProperty Name="ContentTagCategoryOnThreads" Relationship="DBModel.FK_dbo_ContentTagCategoryOnThread_dbo_ContentTagCategory_TagCategoryId" FromRole="ContentTagCategory" ToRole="ContentTagCategoryOnThread" />
+          <Property Type="Boolean" Name="IsHidden" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContentTagCategoryOnThread">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="TagCategoryId" Type="Guid" Nullable="false" />
+          <Property Name="ThreadId" Type="Guid" Nullable="false" />
+          <Property Name="OnlyShowHotTag" Type="Boolean" Nullable="false" />
+          <Property Name="IncludeAll" Type="Boolean" Nullable="false" />
+          <Property Name="IncludeOther" Type="Boolean" Nullable="false" />
+          <Property Name="IsTicked" Type="Boolean" Nullable="false" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ContentTagCategory" Relationship="DBModel.FK_dbo_ContentTagCategoryOnThread_dbo_ContentTagCategory_TagCategoryId" FromRole="ContentTagCategoryOnThread" ToRole="ContentTagCategory" />
+          <NavigationProperty Name="ContentThread" Relationship="DBModel.FK_dbo_ContentTagCategoryOnThread_dbo_ContentThread_ThreadId" FromRole="ContentTagCategoryOnThread" ToRole="ContentThread" />
+        </EntityType>
+        <EntityType Name="ContentThread">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="IsLocked" Type="Boolean" Nullable="false" />
+          <Property Name="IsAbstract" Type="Boolean" Nullable="false" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ParentThreadId" Type="Guid" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ContentTagCategoryOnThreads" Relationship="DBModel.FK_dbo_ContentTagCategoryOnThread_dbo_ContentThread_ThreadId" FromRole="ContentThread" ToRole="ContentTagCategoryOnThread" />
+          <NavigationProperty Name="ContentThread1" Relationship="DBModel.FK_dbo_ContentThread_dbo_ContentThread_ParentThreadId" FromRole="ContentThread" ToRole="ContentThread1" />
+          <NavigationProperty Name="ContentThread2" Relationship="DBModel.FK_dbo_ContentThread_dbo_ContentThread_ParentThreadId" FromRole="ContentThread1" ToRole="ContentThread" />
+          <NavigationProperty Name="ContentTopics" Relationship="DBModel.FK_dbo_ContentTopic_dbo_ContentThread_ThreadId" FromRole="ContentThread" ToRole="ContentTopic" />
+          <NavigationProperty Name="PermissionOnThreads" Relationship="DBModel.FK_dbo_PermissionOnThread_dbo_ContentThread_ThreadId" FromRole="ContentThread" ToRole="PermissionOnThread" />
+          <Property Type="Boolean" Name="IsHidden" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContentTopic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="OriginalTitle" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="SubTitle" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="OriginalSubTitle" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="TitleUrl" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Thumbnail" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="IsSticky" Type="Boolean" Nullable="false" />
+          <Property Name="IsLocked" Type="Boolean" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ThreadId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="FirstCommentId" Type="Guid" />
+          <Property Name="LastCommentId" Type="Guid" />
+          <NavigationProperty Name="ContentComments" Relationship="DBModel.FK_dbo_ContentComment_dbo_ContentTopic_TopicId" FromRole="ContentTopic" ToRole="ContentComment" />
+          <NavigationProperty Name="ContentThread" Relationship="DBModel.FK_dbo_ContentTopic_dbo_ContentThread_ThreadId" FromRole="ContentTopic" ToRole="ContentThread" />
+          <NavigationProperty Name="MemberUser" Relationship="DBModel.FK_dbo_ContentTopic_dbo_MemberUser_UserId" FromRole="ContentTopic" ToRole="MemberUser" />
+          <NavigationProperty Name="ContentTags" Relationship="DBModel.Content_MapTopicTag" FromRole="ContentTopic" ToRole="ContentTag" />
+          <Property Type="Boolean" Name="IsHidden" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContentVote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Amount" Type="Int16" Nullable="false" />
+          <Property Name="VoteDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CommentId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ContentComment" Relationship="DBModel.FK_dbo_ContentVote_dbo_ContentComment_CommentId" FromRole="ContentVote" ToRole="ContentComment" />
+          <NavigationProperty Name="MemberUser" Relationship="DBModel.FK_dbo_ContentVote_dbo_MemberUser_UserId" FromRole="ContentVote" ToRole="MemberUser" />
+        </EntityType>
+        <EntityType Name="LocaleLanguage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="Culture" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="LanguageImageFileName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="RightToLeft" Type="Boolean" Nullable="false" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="LocaleResourceValues" Relationship="DBModel.FK_dbo_LocaleResourceValue_dbo_LocaleLanguage_LanguageId" FromRole="LocaleLanguage" ToRole="LocaleResourceValue" />
+          <NavigationProperty Name="Settings" Relationship="DBModel.FK_dbo_Setting_dbo_LocaleLanguage_LanguageId" FromRole="LocaleLanguage" ToRole="Setting" />
+        </EntityType>
+        <EntityType Name="LocaleResourceKey">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ResourceKey" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="LocaleResourceValues" Relationship="DBModel.FK_dbo_LocaleResourceValue_dbo_LocaleResourceKey_ResourceKeyId" FromRole="LocaleResourceKey" ToRole="LocaleResourceValue" />
+        </EntityType>
+        <EntityType Name="LocaleResourceValue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ResourceValue" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="LanguageId" Type="Guid" Nullable="false" />
+          <Property Name="ResourceKeyId" Type="Guid" Nullable="false" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="LocaleLanguage" Relationship="DBModel.FK_dbo_LocaleResourceValue_dbo_LocaleLanguage_LanguageId" FromRole="LocaleResourceValue" ToRole="LocaleLanguage" />
+          <NavigationProperty Name="LocaleResourceKey" Relationship="DBModel.FK_dbo_LocaleResourceValue_dbo_LocaleResourceKey_ResourceKeyId" FromRole="LocaleResourceValue" ToRole="LocaleResourceKey" />
+        </EntityType>
+        <EntityType Name="MemberRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="RoleName" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="MemberUsers" Relationship="DBModel.FK_dbo_MemberUser_dbo_MemberRole_RoleId" FromRole="MemberRole" ToRole="MemberUser" />
+          <NavigationProperty Name="PermissionOnThreads" Relationship="DBModel.FK_dbo_PermissionOnThread_dbo_MemberRole_RoleId" FromRole="MemberRole" ToRole="PermissionOnThread" />
+          <NavigationProperty Name="Settings" Relationship="DBModel.FK_dbo_Setting_dbo_MemberRole_NewMemberStartRoleId" FromRole="MemberRole" ToRole="Setting" />
+        </EntityType>
+        <EntityType Name="MemberUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="RegisterEmail" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="ContactEmail" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordSalt" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="Token" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="TokenGeneratedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PasswordQuestion" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordAnswer" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="Int32" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+          <Property Name="LastPasswordChangedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastLockoutDate" Type="DateTime" Precision="3" />
+          <Property Name="LastActivityDate" Type="DateTime" Precision="3" />
+          <Property Name="LoginIdExpiresDate" Type="DateTime" Precision="3" />
+          <Property Name="BirthDay" Type="DateTime" Precision="3" />
+          <Property Name="Avatar" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Comment" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="Signature" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Location" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="PersonalWebsite" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Credit" Type="Int32" Nullable="false" />
+          <Property Name="IsExternalAccount" Type="Boolean" Nullable="false" />
+          <Property Name="ExternalAccessId" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="OpenId" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="ExternalAccessToken" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="DisableEmailNotifications" Type="Boolean" Nullable="false" />
+          <Property Name="DisableComment" Type="Boolean" Nullable="false" />
+          <Property Name="DisablePrivateMessages" Type="Boolean" Nullable="false" />
+          <Property Name="DisableFileUploads" Type="Boolean" Nullable="false" />
+          <Property Name="Latitude" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="Longitude" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ContentComments" Relationship="DBModel.FK_dbo_ContentComment_dbo_MemberUser_UserId" FromRole="MemberUser" ToRole="ContentComment" />
+          <NavigationProperty Name="ContentTopics" Relationship="DBModel.FK_dbo_ContentTopic_dbo_MemberUser_UserId" FromRole="MemberUser" ToRole="ContentTopic" />
+          <NavigationProperty Name="ContentVotes" Relationship="DBModel.FK_dbo_ContentVote_dbo_MemberUser_UserId" FromRole="MemberUser" ToRole="ContentVote" />
+          <NavigationProperty Name="MemberRole" Relationship="DBModel.FK_dbo_MemberUser_dbo_MemberRole_RoleId" FromRole="MemberUser" ToRole="MemberRole" />
+          <NavigationProperty Name="Settings" Relationship="DBModel.FK_dbo_Setting_dbo_MemberUser_SuperAdminUserId" FromRole="MemberUser" ToRole="Setting" />
+          <NavigationProperty Name="UploadFiles" Relationship="DBModel.FK_dbo_UploadFile_dbo_MemberUser_UserId" FromRole="MemberUser" ToRole="UploadFile" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="PermissionOnThreads" Relationship="DBModel.FK_dbo_PermissionOnThread_dbo_Permission_PermissionId" FromRole="Permission" ToRole="PermissionOnThread" />
+        </EntityType>
+        <EntityType Name="PermissionOnThread">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="IsGranted" Type="Boolean" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="ThreadId" Type="Guid" Nullable="false" />
+          <Property Name="PermissionId" Type="Guid" Nullable="false" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ContentThread" Relationship="DBModel.FK_dbo_PermissionOnThread_dbo_ContentThread_ThreadId" FromRole="PermissionOnThread" ToRole="ContentThread" />
+          <NavigationProperty Name="MemberRole" Relationship="DBModel.FK_dbo_PermissionOnThread_dbo_MemberRole_RoleId" FromRole="PermissionOnThread" ToRole="MemberRole" />
+          <NavigationProperty Name="Permission" Relationship="DBModel.FK_dbo_PermissionOnThread_dbo_Permission_PermissionId" FromRole="PermissionOnThread" ToRole="Permission" />
+        </EntityType>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+          <Property Name="HomePageController" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="HomePageAction" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ForumName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ForumUrl" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsClosed" Type="Boolean" Nullable="false" />
+          <Property Name="Theme" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Skin" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SMTPHost" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SMTPPort" Type="Int32" />
+          <Property Name="SMTPUsername" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SMTPPassword" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SMTPEnableSSL" Type="Boolean" />
+          <Property Name="AdminEmailAddress" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="EmailSendOnNewUser" Type="Boolean" Nullable="false" />
+          <Property Name="EmailVerifyOnNewUser" Type="Boolean" Nullable="false" />
+          <Property Name="EnableSocialLogins" Type="Boolean" Nullable="false" />
+          <Property Name="AutoApproveNewMember" Type="Boolean" Nullable="false" />
+          <Property Name="TopicsPerPage" Type="Int32" Nullable="false" />
+          <Property Name="CommentsPerPage" Type="Int32" Nullable="false" />
+          <Property Name="DefaultTopicThumbnailFile" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="UploadFileRootPath" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UpdoadFilePathHashLevel" Type="Int32" Nullable="false" />
+          <Property Name="UploadImageFileExtension" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UploadImageFileOrginalMaxByteSize" Type="Int32" Nullable="false" />
+          <Property Name="UploadImageFileMaxByteSize" Type="Int32" Nullable="false" />
+          <Property Name="UploadImageFileMaxWidth" Type="Int32" Nullable="false" />
+          <Property Name="UploadImageFileMaxHeight" Type="Int32" Nullable="false" />
+          <Property Name="UploadDocumentFileExtension" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UploadDocumentFileMaxByteSize" Type="Int32" Nullable="false" />
+          <Property Name="UploadFlashFileExtension" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UploadFlashFileMaxByteSize" Type="Int32" Nullable="false" />
+          <Property Name="UploadMediaFileExtension" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UploadMediaFileMaxByteSize" Type="Int32" Nullable="false" />
+          <Property Name="UploadThumbnailPath" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UploadThumbnailFileMaxByteSize" Type="Int32" Nullable="false" />
+          <Property Name="UploadThumbnailWidth" Type="Int32" Nullable="false" />
+          <Property Name="UploadThumbnailHeight" Type="Int32" Nullable="false" />
+          <Property Name="BannedWordReplaceHolder" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SuperAdminUserId" Type="Guid" Nullable="false" />
+          <Property Name="NewMemberStartRoleId" Type="Guid" Nullable="false" />
+          <Property Name="LanguageId" Type="Guid" Nullable="false" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="LocaleLanguage" Relationship="DBModel.FK_dbo_Setting_dbo_LocaleLanguage_LanguageId" FromRole="Setting" ToRole="LocaleLanguage" />
+          <NavigationProperty Name="MemberRole" Relationship="DBModel.FK_dbo_Setting_dbo_MemberRole_NewMemberStartRoleId" FromRole="Setting" ToRole="MemberRole" />
+          <NavigationProperty Name="MemberUser" Relationship="DBModel.FK_dbo_Setting_dbo_MemberUser_SuperAdminUserId" FromRole="Setting" ToRole="MemberUser" />
+        </EntityType>
+        <EntityType Name="UploadFile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="FilePath" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="UploadDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CategoryId" Type="Guid" Nullable="false" />
+          <Property Name="AttachId" Type="Guid" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="MemberUser" Relationship="DBModel.FK_dbo_UploadFile_dbo_MemberUser_UserId" FromRole="UploadFile" ToRole="MemberUser" />
+          <NavigationProperty Name="UploadFileCategory" Relationship="DBModel.FK_dbo_UploadFile_dbo_UploadFileCategory_CategoryId" FromRole="UploadFile" ToRole="UploadFileCategory" />
+        </EntityType>
+        <EntityType Name="UploadFileCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Key" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="UploadFiles" Relationship="DBModel.FK_dbo_UploadFile_dbo_UploadFileCategory_CategoryId" FromRole="UploadFileCategory" ToRole="UploadFile" />
+        </EntityType>
+        <Association Name="FK_dbo_ContentComment_dbo_ContentTopic_TopicId">
+          <End Role="ContentTopic" Type="DBModel.ContentTopic" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ContentComment" Type="DBModel.ContentComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentTopic">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentComment">
+              <PropertyRef Name="TopicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentComment_dbo_MemberUser_UserId">
+          <End Role="MemberUser" Type="DBModel.MemberUser" Multiplicity="1" />
+          <End Role="ContentComment" Type="DBModel.ContentComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentComment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentVote_dbo_ContentComment_CommentId">
+          <End Role="ContentComment" Type="DBModel.ContentComment" Multiplicity="1" />
+          <End Role="ContentVote" Type="DBModel.ContentVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentComment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentVote">
+              <PropertyRef Name="CommentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentTag_dbo_ContentTag_ParentTagId">
+          <End Role="ContentTag" Type="DBModel.ContentTag" Multiplicity="0..1" />
+          <End Role="ContentTag1" Type="DBModel.ContentTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentTag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentTag1">
+              <PropertyRef Name="ParentTagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentTag_dbo_ContentTagCategory_CategoryId">
+          <End Role="ContentTagCategory" Type="DBModel.ContentTagCategory" Multiplicity="0..1" />
+          <End Role="ContentTag" Type="DBModel.ContentTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentTagCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentTag">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentTagCategoryOnThread_dbo_ContentTagCategory_TagCategoryId">
+          <End Role="ContentTagCategory" Type="DBModel.ContentTagCategory" Multiplicity="1" />
+          <End Role="ContentTagCategoryOnThread" Type="DBModel.ContentTagCategoryOnThread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentTagCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentTagCategoryOnThread">
+              <PropertyRef Name="TagCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentTagCategoryOnThread_dbo_ContentThread_ThreadId">
+          <End Role="ContentThread" Type="DBModel.ContentThread" Multiplicity="1" />
+          <End Role="ContentTagCategoryOnThread" Type="DBModel.ContentTagCategoryOnThread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentThread">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentTagCategoryOnThread">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentThread_dbo_ContentThread_ParentThreadId">
+          <End Role="ContentThread" Type="DBModel.ContentThread" Multiplicity="0..1" />
+          <End Role="ContentThread1" Type="DBModel.ContentThread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentThread">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentThread1">
+              <PropertyRef Name="ParentThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentTopic_dbo_ContentThread_ThreadId">
+          <End Role="ContentThread" Type="DBModel.ContentThread" Multiplicity="1" />
+          <End Role="ContentTopic" Type="DBModel.ContentTopic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentThread">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentTopic">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PermissionOnThread_dbo_ContentThread_ThreadId">
+          <End Role="ContentThread" Type="DBModel.ContentThread" Multiplicity="1" />
+          <End Role="PermissionOnThread" Type="DBModel.PermissionOnThread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentThread">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionOnThread">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentTopic_dbo_MemberUser_UserId">
+          <End Role="MemberUser" Type="DBModel.MemberUser" Multiplicity="1" />
+          <End Role="ContentTopic" Type="DBModel.ContentTopic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentTopic">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ContentVote_dbo_MemberUser_UserId">
+          <End Role="MemberUser" Type="DBModel.MemberUser" Multiplicity="1" />
+          <End Role="ContentVote" Type="DBModel.ContentVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContentVote">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_LocaleResourceValue_dbo_LocaleLanguage_LanguageId">
+          <End Role="LocaleLanguage" Type="DBModel.LocaleLanguage" Multiplicity="1" />
+          <End Role="LocaleResourceValue" Type="DBModel.LocaleResourceValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocaleLanguage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LocaleResourceValue">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Setting_dbo_LocaleLanguage_LanguageId">
+          <End Role="LocaleLanguage" Type="DBModel.LocaleLanguage" Multiplicity="1" />
+          <End Role="Setting" Type="DBModel.Setting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocaleLanguage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Setting">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_LocaleResourceValue_dbo_LocaleResourceKey_ResourceKeyId">
+          <End Role="LocaleResourceKey" Type="DBModel.LocaleResourceKey" Multiplicity="1" />
+          <End Role="LocaleResourceValue" Type="DBModel.LocaleResourceValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocaleResourceKey">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LocaleResourceValue">
+              <PropertyRef Name="ResourceKeyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_MemberUser_dbo_MemberRole_RoleId">
+          <End Role="MemberRole" Type="DBModel.MemberRole" Multiplicity="1" />
+          <End Role="MemberUser" Type="DBModel.MemberUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MemberUser">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PermissionOnThread_dbo_MemberRole_RoleId">
+          <End Role="MemberRole" Type="DBModel.MemberRole" Multiplicity="1" />
+          <End Role="PermissionOnThread" Type="DBModel.PermissionOnThread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionOnThread">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Setting_dbo_MemberRole_NewMemberStartRoleId">
+          <End Role="MemberRole" Type="DBModel.MemberRole" Multiplicity="1" />
+          <End Role="Setting" Type="DBModel.Setting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Setting">
+              <PropertyRef Name="NewMemberStartRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Setting_dbo_MemberUser_SuperAdminUserId">
+          <End Role="MemberUser" Type="DBModel.MemberUser" Multiplicity="1" />
+          <End Role="Setting" Type="DBModel.Setting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Setting">
+              <PropertyRef Name="SuperAdminUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UploadFile_dbo_MemberUser_UserId">
+          <End Role="MemberUser" Type="DBModel.MemberUser" Multiplicity="1" />
+          <End Role="UploadFile" Type="DBModel.UploadFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemberUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UploadFile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PermissionOnThread_dbo_Permission_PermissionId">
+          <End Role="Permission" Type="DBModel.Permission" Multiplicity="1" />
+          <End Role="PermissionOnThread" Type="DBModel.PermissionOnThread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permission">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermissionOnThread">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UploadFile_dbo_UploadFileCategory_CategoryId">
+          <End Role="UploadFileCategory" Type="DBModel.UploadFileCategory" Multiplicity="1" />
+          <End Role="UploadFile" Type="DBModel.UploadFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UploadFileCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UploadFile">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Content_MapTopicTag">
+          <End Role="ContentTag" Type="DBModel.ContentTag" Multiplicity="*" />
+          <End Role="ContentTopic" Type="DBModel.ContentTopic" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CircleDBModelStoreContainer" CdmEntityContainer="AdminDbEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="DBModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentBannedWords">
+            <EntityTypeMapping TypeName="DBModel.ContentBannedWord">
+              <MappingFragment StoreEntitySet="ContentBannedWord">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Word" ColumnName="Word" />
+                <ScalarProperty Name="IsRequiredToCheck" ColumnName="IsRequiredToCheck" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentComments">
+            <EntityTypeMapping TypeName="DBModel.ContentComment">
+              <MappingFragment StoreEntitySet="ContentComment">
+                <ScalarProperty Name="IsHidden" ColumnName="IsHidden" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="OriginalContent" ColumnName="OriginalContent" />
+                <ScalarProperty Name="IsSpam" ColumnName="IsSpam" />
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="IsSolution" ColumnName="IsSolution" />
+                <ScalarProperty Name="IsAttachedToTopic" ColumnName="IsAttachedToTopic" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+                <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+                <ScalarProperty Name="VoteUpCount" ColumnName="VoteUpCount" />
+                <ScalarProperty Name="VoteDownCount" ColumnName="VoteDownCount" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentTags">
+            <EntityTypeMapping TypeName="DBModel.ContentTag">
+              <MappingFragment StoreEntitySet="ContentTag">
+                <ScalarProperty Name="IsHidden" ColumnName="IsHidden" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="IsHot" ColumnName="IsHot" />
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ParentTagId" ColumnName="ParentTagId" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentTagCategories">
+            <EntityTypeMapping TypeName="DBModel.ContentTagCategory">
+              <MappingFragment StoreEntitySet="ContentTagCategory">
+                <ScalarProperty Name="IsHidden" ColumnName="IsHidden" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentTagCategoryOnThreads">
+            <EntityTypeMapping TypeName="DBModel.ContentTagCategoryOnThread">
+              <MappingFragment StoreEntitySet="ContentTagCategoryOnThread">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TagCategoryId" ColumnName="TagCategoryId" />
+                <ScalarProperty Name="ThreadId" ColumnName="ThreadId" />
+                <ScalarProperty Name="OnlyShowHotTag" ColumnName="OnlyShowHotTag" />
+                <ScalarProperty Name="IncludeAll" ColumnName="IncludeAll" />
+                <ScalarProperty Name="IncludeOther" ColumnName="IncludeOther" />
+                <ScalarProperty Name="IsTicked" ColumnName="IsTicked" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentThreads">
+            <EntityTypeMapping TypeName="DBModel.ContentThread">
+              <MappingFragment StoreEntitySet="ContentThread">
+                <ScalarProperty Name="IsHidden" ColumnName="IsHidden" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="IsAbstract" ColumnName="IsAbstract" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ParentThreadId" ColumnName="ParentThreadId" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentTopics">
+            <EntityTypeMapping TypeName="DBModel.ContentTopic">
+              <MappingFragment StoreEntitySet="ContentTopic">
+                <ScalarProperty Name="IsHidden" ColumnName="IsHidden" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="OriginalTitle" ColumnName="OriginalTitle" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="OriginalSubTitle" ColumnName="OriginalSubTitle" />
+                <ScalarProperty Name="TitleUrl" ColumnName="TitleUrl" />
+                <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+                <ScalarProperty Name="IsSticky" ColumnName="IsSticky" />
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+                <ScalarProperty Name="ThreadId" ColumnName="ThreadId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="FirstCommentId" ColumnName="FirstCommentId" />
+                <ScalarProperty Name="LastCommentId" ColumnName="LastCommentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContentVotes">
+            <EntityTypeMapping TypeName="DBModel.ContentVote">
+              <MappingFragment StoreEntitySet="ContentVote">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="VoteDate" ColumnName="VoteDate" />
+                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocaleLanguages">
+            <EntityTypeMapping TypeName="DBModel.LocaleLanguage">
+              <MappingFragment StoreEntitySet="LocaleLanguage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Culture" ColumnName="Culture" />
+                <ScalarProperty Name="LanguageImageFileName" ColumnName="LanguageImageFileName" />
+                <ScalarProperty Name="RightToLeft" ColumnName="RightToLeft" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocaleResourceKeys">
+            <EntityTypeMapping TypeName="DBModel.LocaleResourceKey">
+              <MappingFragment StoreEntitySet="LocaleResourceKey">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ResourceKey" ColumnName="ResourceKey" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocaleResourceValues">
+            <EntityTypeMapping TypeName="DBModel.LocaleResourceValue">
+              <MappingFragment StoreEntitySet="LocaleResourceValue">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ResourceValue" ColumnName="ResourceValue" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="ResourceKeyId" ColumnName="ResourceKeyId" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberRoles">
+            <EntityTypeMapping TypeName="DBModel.MemberRole">
+              <MappingFragment StoreEntitySet="MemberRole">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberUsers">
+            <EntityTypeMapping TypeName="DBModel.MemberUser">
+              <MappingFragment StoreEntitySet="MemberUser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="RegisterEmail" ColumnName="RegisterEmail" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="TokenGeneratedTime" ColumnName="TokenGeneratedTime" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="LoginIdExpiresDate" ColumnName="LoginIdExpiresDate" />
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Signature" ColumnName="Signature" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="PersonalWebsite" ColumnName="PersonalWebsite" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="IsExternalAccount" ColumnName="IsExternalAccount" />
+                <ScalarProperty Name="ExternalAccessId" ColumnName="ExternalAccessId" />
+                <ScalarProperty Name="OpenId" ColumnName="OpenId" />
+                <ScalarProperty Name="ExternalAccessToken" ColumnName="ExternalAccessToken" />
+                <ScalarProperty Name="DisableEmailNotifications" ColumnName="DisableEmailNotifications" />
+                <ScalarProperty Name="DisableComment" ColumnName="DisableComment" />
+                <ScalarProperty Name="DisablePrivateMessages" ColumnName="DisablePrivateMessages" />
+                <ScalarProperty Name="DisableFileUploads" ColumnName="DisableFileUploads" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permissions">
+            <EntityTypeMapping TypeName="DBModel.Permission">
+              <MappingFragment StoreEntitySet="Permission">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermissionOnThreads">
+            <EntityTypeMapping TypeName="DBModel.PermissionOnThread">
+              <MappingFragment StoreEntitySet="PermissionOnThread">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IsGranted" ColumnName="IsGranted" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ThreadId" ColumnName="ThreadId" />
+                <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Settings">
+            <EntityTypeMapping TypeName="DBModel.Setting">
+              <MappingFragment StoreEntitySet="Setting">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="HomePageController" ColumnName="HomePageController" />
+                <ScalarProperty Name="HomePageAction" ColumnName="HomePageAction" />
+                <ScalarProperty Name="ForumName" ColumnName="ForumName" />
+                <ScalarProperty Name="ForumUrl" ColumnName="ForumUrl" />
+                <ScalarProperty Name="IsClosed" ColumnName="IsClosed" />
+                <ScalarProperty Name="Theme" ColumnName="Theme" />
+                <ScalarProperty Name="Skin" ColumnName="Skin" />
+                <ScalarProperty Name="SMTPHost" ColumnName="SMTPHost" />
+                <ScalarProperty Name="SMTPPort" ColumnName="SMTPPort" />
+                <ScalarProperty Name="SMTPUsername" ColumnName="SMTPUsername" />
+                <ScalarProperty Name="SMTPPassword" ColumnName="SMTPPassword" />
+                <ScalarProperty Name="SMTPEnableSSL" ColumnName="SMTPEnableSSL" />
+                <ScalarProperty Name="AdminEmailAddress" ColumnName="AdminEmailAddress" />
+                <ScalarProperty Name="EmailSendOnNewUser" ColumnName="EmailSendOnNewUser" />
+                <ScalarProperty Name="EmailVerifyOnNewUser" ColumnName="EmailVerifyOnNewUser" />
+                <ScalarProperty Name="EnableSocialLogins" ColumnName="EnableSocialLogins" />
+                <ScalarProperty Name="AutoApproveNewMember" ColumnName="AutoApproveNewMember" />
+                <ScalarProperty Name="TopicsPerPage" ColumnName="TopicsPerPage" />
+                <ScalarProperty Name="CommentsPerPage" ColumnName="CommentsPerPage" />
+                <ScalarProperty Name="DefaultTopicThumbnailFile" ColumnName="DefaultTopicThumbnailFile" />
+                <ScalarProperty Name="UploadFileRootPath" ColumnName="UploadFileRootPath" />
+                <ScalarProperty Name="UpdoadFilePathHashLevel" ColumnName="UpdoadFilePathHashLevel" />
+                <ScalarProperty Name="UploadImageFileExtension" ColumnName="UploadImageFileExtension" />
+                <ScalarProperty Name="UploadImageFileOrginalMaxByteSize" ColumnName="UploadImageFileOrginalMaxByteSize" />
+                <ScalarProperty Name="UploadImageFileMaxByteSize" ColumnName="UploadImageFileMaxByteSize" />
+                <ScalarProperty Name="UploadImageFileMaxWidth" ColumnName="UploadImageFileMaxWidth" />
+                <ScalarProperty Name="UploadImageFileMaxHeight" ColumnName="UploadImageFileMaxHeight" />
+                <ScalarProperty Name="UploadDocumentFileExtension" ColumnName="UploadDocumentFileExtension" />
+                <ScalarProperty Name="UploadDocumentFileMaxByteSize" ColumnName="UploadDocumentFileMaxByteSize" />
+                <ScalarProperty Name="UploadFlashFileExtension" ColumnName="UploadFlashFileExtension" />
+                <ScalarProperty Name="UploadFlashFileMaxByteSize" ColumnName="UploadFlashFileMaxByteSize" />
+                <ScalarProperty Name="UploadMediaFileExtension" ColumnName="UploadMediaFileExtension" />
+                <ScalarProperty Name="UploadMediaFileMaxByteSize" ColumnName="UploadMediaFileMaxByteSize" />
+                <ScalarProperty Name="UploadThumbnailPath" ColumnName="UploadThumbnailPath" />
+                <ScalarProperty Name="UploadThumbnailFileMaxByteSize" ColumnName="UploadThumbnailFileMaxByteSize" />
+                <ScalarProperty Name="UploadThumbnailWidth" ColumnName="UploadThumbnailWidth" />
+                <ScalarProperty Name="UploadThumbnailHeight" ColumnName="UploadThumbnailHeight" />
+                <ScalarProperty Name="BannedWordReplaceHolder" ColumnName="BannedWordReplaceHolder" />
+                <ScalarProperty Name="SuperAdminUserId" ColumnName="SuperAdminUserId" />
+                <ScalarProperty Name="NewMemberStartRoleId" ColumnName="NewMemberStartRoleId" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UploadFiles">
+            <EntityTypeMapping TypeName="DBModel.UploadFile">
+              <MappingFragment StoreEntitySet="UploadFile">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="AttachId" ColumnName="AttachId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UploadFileCategories">
+            <EntityTypeMapping TypeName="DBModel.UploadFileCategory">
+              <MappingFragment StoreEntitySet="UploadFileCategory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Content_MapTopicTag" TypeName="DBModel.Content_MapTopicTag" StoreEntitySet="Content_MapTopicTag">
+            <EndProperty Name="ContentTag">
+              <ScalarProperty Name="Id" ColumnName="TagId" />
+            </EndProperty>
+            <EndProperty Name="ContentTopic">
+              <ScalarProperty Name="Id" ColumnName="TopicId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

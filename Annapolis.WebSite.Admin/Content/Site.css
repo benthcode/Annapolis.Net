@@ -1,0 +1,123 @@
+﻿/* Styles for editor and display helpers
+----------------------------------------------------------*/
+input[type=text], textarea {
+    width:100%;
+}
+
+.display-label,
+.editor-label
+{
+    clear:both;
+    float:left;
+    width:300px;
+    text-align:left;
+    height:30px;
+    border-bottom:thin dotted;
+}
+
+
+.display-field,
+.editor-field {
+    margin-left:20px;
+    display: block;
+    height:30px;
+    width:900px;
+    border-bottom:thin dotted;
+}
+
+    .editor-field input
+    {
+        width:500px;
+    }
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+
+
+/******************************************************/
+
+
+body {
+    padding-top: 50px;
+}
+.sub-header {
+    border-bottom: 1px solid #EEEEEE;
+    padding-bottom: 10px;
+}
+.sidebar {
+    display: none;
+}
+@media (min-width: 768px) {
+.sidebar {
+    background-color: #F5F5F5;
+    border-right: 1px solid #EEEEEE;
+    bottom: 0;
+    display: block;
+    left: 0;
+    padding: 70px 20px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+}
+.nav-sidebar {
+    margin-bottom: 20px;
+    margin-left: -20px;
+    margin-right: -21px;
+}
+.nav-sidebar > li > a {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.nav-sidebar > .active > a {
+    background-color: #428BCA;
+    color: #FFFFFF;
+}
+.main {
+    padding: 20px;
+}
+@media (min-width: 768px) {
+.main {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+}
+.main .page-header {
+    margin-top: 0;
+}
+.placeholders {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.placeholders h4 {
+    margin-bottom: 0;
+}
+.placeholder {
+    margin-bottom: 20px;
+}
+.placeholder img {
+    border-radius: 50%;
+}

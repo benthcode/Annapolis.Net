@@ -1,0 +1,10 @@
+﻿@Styles.Render("~/Content/siteCss")
+<!--[if lte IE 6]>
+    <link rel="stylesheet" type="text/css" href="../../../Content/bootstrap/css/bsie-bootstrap-ie6.css" />
+    <link rel="stylesheet" type="text/css" href="../../../Content/bootstrap/css/bsie-ie.css" />
+<![endif]-->
+@Scripts.Render("~/bundles/post-libraryScript")
+@ScriptRegister.RegisterAllScriptOnClient()
+ <!--[if lte IE 6]>
+        <script type="text/javascript" src="../../../Scripts/library/bootstrap/bsie-bootstrap-ie.js"></script>
+<![endif]-->

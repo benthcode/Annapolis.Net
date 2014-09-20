@@ -1,0 +1,372 @@
+﻿@model Annapolis.WebSite.Admin.Models.Setting
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Setting</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsDefault)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsDefault)
+            @Html.ValidationMessageFor(model => model.IsDefault)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomePageController)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomePageController)
+            @Html.ValidationMessageFor(model => model.HomePageController)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomePageAction)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomePageAction)
+            @Html.ValidationMessageFor(model => model.HomePageAction)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ForumName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ForumName)
+            @Html.ValidationMessageFor(model => model.ForumName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ForumUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ForumUrl)
+            @Html.ValidationMessageFor(model => model.ForumUrl)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsClosed)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsClosed)
+            @Html.ValidationMessageFor(model => model.IsClosed)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Theme)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Theme)
+            @Html.ValidationMessageFor(model => model.Theme)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Skin)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Skin)
+            @Html.ValidationMessageFor(model => model.Skin)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SMTPHost)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SMTPHost)
+            @Html.ValidationMessageFor(model => model.SMTPHost)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SMTPPort)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SMTPPort)
+            @Html.ValidationMessageFor(model => model.SMTPPort)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SMTPUsername)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SMTPUsername)
+            @Html.ValidationMessageFor(model => model.SMTPUsername)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SMTPPassword)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SMTPPassword)
+            @Html.ValidationMessageFor(model => model.SMTPPassword)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SMTPEnableSSL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SMTPEnableSSL)
+            @Html.ValidationMessageFor(model => model.SMTPEnableSSL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AdminEmailAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AdminEmailAddress)
+            @Html.ValidationMessageFor(model => model.AdminEmailAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmailSendOnNewUser)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmailSendOnNewUser)
+            @Html.ValidationMessageFor(model => model.EmailSendOnNewUser)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmailVerifyOnNewUser)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmailVerifyOnNewUser)
+            @Html.ValidationMessageFor(model => model.EmailVerifyOnNewUser)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EnableSocialLogins)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EnableSocialLogins)
+            @Html.ValidationMessageFor(model => model.EnableSocialLogins)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AutoApproveNewMember)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AutoApproveNewMember)
+            @Html.ValidationMessageFor(model => model.AutoApproveNewMember)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TopicsPerPage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TopicsPerPage)
+            @Html.ValidationMessageFor(model => model.TopicsPerPage)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CommentsPerPage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CommentsPerPage)
+            @Html.ValidationMessageFor(model => model.CommentsPerPage)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadFileRootPath)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadFileRootPath)
+            @Html.ValidationMessageFor(model => model.UploadFileRootPath)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UpdoadFilePathHashLevel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UpdoadFilePathHashLevel)
+            @Html.ValidationMessageFor(model => model.UpdoadFilePathHashLevel)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadImageFileExtension)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadImageFileExtension)
+            @Html.ValidationMessageFor(model => model.UploadImageFileExtension)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadImageFileOrginalMaxByteSize)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadImageFileOrginalMaxByteSize)
+            @Html.ValidationMessageFor(model => model.UploadImageFileOrginalMaxByteSize)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadImageFileMaxByteSize)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadImageFileMaxByteSize)
+            @Html.ValidationMessageFor(model => model.UploadImageFileMaxByteSize)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadImageFileMaxWidth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadImageFileMaxWidth)
+            @Html.ValidationMessageFor(model => model.UploadImageFileMaxWidth)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadImageFileMaxHeight)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadImageFileMaxHeight)
+            @Html.ValidationMessageFor(model => model.UploadImageFileMaxHeight)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadDocumentFileExtension)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadDocumentFileExtension)
+            @Html.ValidationMessageFor(model => model.UploadDocumentFileExtension)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadDocumentFileMaxByteSize)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadDocumentFileMaxByteSize)
+            @Html.ValidationMessageFor(model => model.UploadDocumentFileMaxByteSize)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadFlashFileExtension)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadFlashFileExtension)
+            @Html.ValidationMessageFor(model => model.UploadFlashFileExtension)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadFlashFileMaxByteSize)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadFlashFileMaxByteSize)
+            @Html.ValidationMessageFor(model => model.UploadFlashFileMaxByteSize)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadMediaFileExtension)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadMediaFileExtension)
+            @Html.ValidationMessageFor(model => model.UploadMediaFileExtension)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadMediaFileMaxByteSize)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadMediaFileMaxByteSize)
+            @Html.ValidationMessageFor(model => model.UploadMediaFileMaxByteSize)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadThumbnailPath)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadThumbnailPath)
+            @Html.ValidationMessageFor(model => model.UploadThumbnailPath)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadThumbnailFileMaxByteSize)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadThumbnailFileMaxByteSize)
+            @Html.ValidationMessageFor(model => model.UploadThumbnailFileMaxByteSize)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadThumbnailWidth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadThumbnailWidth)
+            @Html.ValidationMessageFor(model => model.UploadThumbnailWidth)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UploadThumbnailHeight)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UploadThumbnailHeight)
+            @Html.ValidationMessageFor(model => model.UploadThumbnailHeight)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BannedWordReplaceHolder)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BannedWordReplaceHolder)
+            @Html.ValidationMessageFor(model => model.BannedWordReplaceHolder)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SuperAdminUserId, "MemberUser")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("SuperAdminUserId", String.Empty)
+            @Html.ValidationMessageFor(model => model.SuperAdminUserId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NewMemberStartRoleId, "MemberRole")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("NewMemberStartRoleId", String.Empty)
+            @Html.ValidationMessageFor(model => model.NewMemberStartRoleId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LanguageId, "LocaleLanguage")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("LanguageId", String.Empty)
+            @Html.ValidationMessageFor(model => model.LanguageId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Key)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Key)
+            @Html.ValidationMessageFor(model => model.Key)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

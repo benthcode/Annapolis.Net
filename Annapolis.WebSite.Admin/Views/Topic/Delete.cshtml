@@ -1,0 +1,131 @@
+﻿@model Annapolis.WebSite.Admin.Models.ContentTopic
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>ContentTopic</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OriginalTitle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OriginalTitle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SubTitle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SubTitle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OriginalSubTitle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OriginalSubTitle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TitleUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TitleUrl)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Thumbnail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Thumbnail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsSticky)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsSticky)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsLocked)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsLocked)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsHidden)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsHidden)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreateTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreateTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastUpdateTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastUpdateTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContentThread.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContentThread.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MemberUser.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MemberUser.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Key)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Key)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirstCommentId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstCommentId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastCommentId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastCommentId)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

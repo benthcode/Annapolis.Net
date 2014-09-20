@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="46a4a1f2ae414674a176785d54eda3d0" Name="Diagram1" ZoomLevel="98">
+        <EntityTypeShape EntityType="DBModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ContentBannedWord" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ContentComment" Width="1.5" PointX="5.25" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ContentTag" Width="1.5" PointX="6" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ContentTagCategory" Width="1.5" PointX="3.75" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ContentTagCategoryOnThread" Width="1.5" PointX="10" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ContentThread" Width="1.5" PointX="3.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ContentTopic" Width="1.5" PointX="8.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ContentVote" Width="1.5" PointX="7.5" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.LocaleLanguage" Width="1.5" PointX="9" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.LocaleResourceKey" Width="1.5" PointX="9" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.LocaleResourceValue" Width="1.5" PointX="11.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.MemberRole" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.MemberUser" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Permission" Width="1.5" PointX="3.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.PermissionOnThread" Width="1.5" PointX="6" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Setting" Width="1.5" PointX="11.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.UploadFile" Width="1.5" PointX="8.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.UploadFileCategory" Width="1.5" PointX="6" PointY="11.875" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.FK_dbo_ContentComment_dbo_ContentTopic_TopicId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_ContentComment_dbo_MemberUser_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_ContentVote_dbo_ContentComment_CommentId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_ContentTag_dbo_ContentTag_ParentTagId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_ContentTag_dbo_ContentTagCategory_CategoryId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_ContentTagCategoryOnThread_dbo_ContentTagCategory_TagCategoryId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_ContentTagCategoryOnThread_dbo_ContentThread_ThreadId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_ContentThread_dbo_ContentThread_ParentThreadId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_ContentTopic_dbo_ContentThread_ThreadId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_PermissionOnThread_dbo_ContentThread_ThreadId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_ContentTopic_dbo_MemberUser_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_ContentVote_dbo_MemberUser_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_LocaleResourceValue_dbo_LocaleLanguage_LanguageId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_Setting_dbo_LocaleLanguage_LanguageId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_LocaleResourceValue_dbo_LocaleResourceKey_ResourceKeyId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_MemberUser_dbo_MemberRole_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_PermissionOnThread_dbo_MemberRole_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_Setting_dbo_MemberRole_NewMemberStartRoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_Setting_dbo_MemberUser_SuperAdminUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_UploadFile_dbo_MemberUser_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_PermissionOnThread_dbo_Permission_PermissionId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_dbo_UploadFile_dbo_UploadFileCategory_CategoryId" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.Content_MapTopicTag" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

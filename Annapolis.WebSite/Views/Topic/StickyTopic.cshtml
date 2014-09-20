@@ -1,0 +1,27 @@
+﻿@model ModelListClient<TopicClient>
+@{
+    Layout = null;
+}
+
+<div id="divstickTopic-j" class="row-space-20 row stickytopic">
+    <div data-bind="foreach: models" >
+        <div class="stickytopic-item" style="float:left">
+            <a class="pull-left">
+                <img class="media-object thumbnailimage-small" data-bind='attr: {src: thumbnail}' />
+            </a>
+            <div>
+                <div class="title-stickytopic-item" ><a data-bind='text: title, attr: { href: "/topic/show/" + id() }' ></a></div>
+                <div class="">
+                    <i class="icon-user"></i><span class="badge badge-info" data-bind="text: userName"></span>
+                    <a class="btn btn-mini btn-warning" data-bind='attr: { href: "/topic/show/" + id() }'> &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+@{
+    ScriptRegister.AddJson("stickTopic", Model);
+    ScriptRegister.AddKnockOutBinding("stickTopic", "#divstickTopic-j");    
+}
